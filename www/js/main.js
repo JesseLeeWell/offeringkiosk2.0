@@ -124,7 +124,7 @@ function determinStartPage()
 function setapplesafe()
 {
 	
-	
+	console.log("in setapplesafe");
 	var applesafeversion = storageGet('applesafeversion');
 	var applesafestorage = storageGet('applesafestorage');
 	
@@ -139,6 +139,7 @@ function setapplesafe()
 	
 	if(((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
 	{
+		console.log("in setapplesafe in if");
 		//if it came in here, we set the flow to false until we know otherwise
 		storageSet('applesafestorage', 'false');
 		
