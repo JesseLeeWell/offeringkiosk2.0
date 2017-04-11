@@ -14,6 +14,7 @@
         Continue To Give Team
     </author>
     <content src="index.html" />
+    <icon src="icon.png" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />

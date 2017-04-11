@@ -137,7 +137,7 @@ function setapplesafe()
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
 	
-	if(((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
+	if(((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ) || true)
 	{
 		console.log("in setapplesafe in if");
 		//if it came in here, we set the flow to false until we know otherwise
@@ -151,7 +151,7 @@ function setapplesafe()
 		  success:function(data){
 			
 			var result = (data =='true' )?'true':'false';
-			
+			console.log(result);
 			
 			storageSet('applesafeversion', _kioskversion);
 			storageSet('applesafestorage', result);
@@ -202,10 +202,12 @@ function iabLoadStart(event) {
  function iabLoadStartSearch(event) { 
 	
 	cururl = event.url;
-	
+	console.log(" in iabLoadStartSearch");
+	console.log(cururl);
+	console.log(cururl.indexOf("?displayname") != -1);
 	if(cururl.indexOf("?displayname") != -1)
 	{
-		
+		console.log("iabLoadStartSearch if one");
 		storeURLInfo(cururl);		
 		storageSet('step-search','true');	
 		browserwindow.removeEventListener('exit', iabCloseSearch);
@@ -217,12 +219,15 @@ function iabLoadStart(event) {
 		//determin what step to send the user to.  eiteher settings page or screen selection page
 		if(isStartScreenSet())
 		{
+				console.log("iabLoadStartSearch if two");
 			showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
+			
 			loadSettingsPage();
 			
 		}
 		else
 		{
+			console.log("iabLoadStartSearch in if nested else");
 			openSetStartScreenPage();
 			
 		
@@ -306,9 +311,9 @@ function openSearch()
 }
 function openSearchPage()
 {	
-	
-	browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
-	
+	console.log("in openSearchPage");
+	browserwindow = cordova.InAppBrowser.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
+	console.log(_kioskURL + _searchPage);
 	browserwindow.addEventListener('loadstart', iabLoadStartSearch);
 	//browserwindow.addEventListener('loadstop', iabLoadStartSearch);
 	browserwindow.addEventListener('exit', iabCloseSearch);
@@ -700,7 +705,7 @@ function setupStartScreenPage()
 function loadSettingsPage()
 {
    //setupSettingsPage();
-	
+	console.log("in loadSettingsPage");
 	$(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
 			transition: 'slidefade',
 			changeHash: false,
@@ -761,6 +766,8 @@ function loadPurchasePage()
 function loadLearnMorePage()
 {
 	var target = (getAppleSafe())?'_blank':'_system';
+	console.log(target);
+	target = "_blank";
 	browserwindow = window.open(_baseURL, target, 'location=no');
 }
 function loadLockKioskHelp()
