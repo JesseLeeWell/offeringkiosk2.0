@@ -35,11 +35,9 @@
 			
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/stylesmall.css" />
-		
+				
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 	
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-        
-		
        
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
@@ -50,11 +48,11 @@
 	</head>
 	<body id='pagebody'>
 		
-		<div class="content">
+		<div class="content" style="padding-top:10px;"> 
 			<!-- Start of index page page -->
 			<div data-role="page" id="indexpage">
 				<div data-role="header" data-position="fixed" >
-					<div style='padding:5px; background-color:white; border-bottom:1px solid grey;'>
+					<div style='padding:20px 5px 5px 5px; background-color:white; border-bottom:1px solid grey;'>
 						<span class='mailflowbutton' onclick ="javascript:openDonationPage('');"  data-transition="slidefade" data-inline="true">Giving Mode &#10140;</span>
 						<span class='mailflowbutton' onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"  data-transition="slidefade" data-inline="true">Point Of Sale Mode &#10140;</span>
 					
