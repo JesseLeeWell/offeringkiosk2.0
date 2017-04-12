@@ -1,0 +1,55 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"UnimagSwiper\"><param name=\"ios-package\" value=\"UnimagSwiper\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.continuetogive.kiosk"
+        },
+        "com.wodify.cordova.plugin.unimag-swiper": {
+            "PACKAGE_NAME": "com.continuetogive.kiosk"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "id": "com.wodify.cordova.plugin.unimag-swiper.UniMag-Swiper",
+            "file": "plugins/com.wodify.cordova.plugin.unimag-swiper/www/unimag-swiper.js",
+            "pluginId": "com.wodify.cordova.plugin.unimag-swiper",
+            "clobbers": [
+                "cordova.plugins.unimag.swiper"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-device": "1.1.5",
+        "com.wodify.cordova.plugin.unimag-swiper": "0.0.2"
+    }
+}

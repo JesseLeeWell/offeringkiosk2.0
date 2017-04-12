@@ -31,7 +31,6 @@ function onDeviceReady() {
     determinStartPage();
 	
 	
-	
 }
 //bind to our indexpage so that we can set it up every tiem we go there
 $(document).bind( "pagechange", function( e, data ) { 
@@ -135,7 +134,7 @@ function setapplesafe()
 	//if the two app versions don't match up we need to check
 	//if its true and the 2 app version match, we don't need to check	
 	
-	if(((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
+	if(true || ((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
 	{
 		//if it came in here, we set the flow to false until we know otherwise
 		storageSet('applesafestorage', 'false');
@@ -145,6 +144,7 @@ function setapplesafe()
         
 		$.ajax({
 		  url: urltocall,
+		  async: false,
 		  success:function(data){
 			
 			var result = (data =='true' )?'true':'false';
@@ -438,10 +438,10 @@ function setupSettingsPage()
 	
 	setStepStartRecivingDonations();
 	setHelpfullLinks();
-	
+	setStepClaimOrganization();
 	setDeviceSpecificClasses();
 	
-	setStepClaimOrganization();
+	
 	
 	
 }
@@ -514,8 +514,8 @@ function setStepClaimOrganization()
 	}
 	else
 	{
-		
-		$('.step-claimorganization-outer').show();
+		if(getAppleSafe())
+			$('.step-claimorganization-outer').show();
 	
 	}
 	
@@ -691,7 +691,7 @@ function saveStartPageRadioButtonValue()
 	
 }
 */
-function setupStartScreenPage()
+function setupStartScreenPage() 
 {
 	
 	setDeviceSpecificClasses();
@@ -753,7 +753,7 @@ function loadContactRequest()
 }
 function loadPurchasePage()
 {
-	var url = _kioskURL + _purchasePageURL;
+	var url = _purchasePageURL;
 	var target = (getAppleSafe())?'_blank':'_system';
 	browserwindow = window.open(url, target, 'location=no');
 }
@@ -1084,9 +1084,9 @@ function ajaxCallKioskSetup()
 		
 		pageid = '';
 	}
-    var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&pageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
+    var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&kiosksetpageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
 	
-	var urltocall = _baseURL + _kiosksetupURL + urlstring;
+	var urltocall = _baseURL + _kiosksetupURL + urlstring; 
 	// Assign handlers immediately after making the request,
 	// and remember the jqxhr object for this request
 	var jqxhr = $.post( urltocall);
@@ -1096,7 +1096,7 @@ function setupbyscreensize()
 
 	width = $(document).width(); // returns width of HTML document
 	
-	if(width < 720)
+	if(width < 750)
 	{
 	 $('#pagebody').addClass('smallScreen');	
 	 $('.largeScreen-setupSteps').hide();

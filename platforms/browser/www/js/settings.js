@@ -2,11 +2,11 @@
 //environment
 //var environment = 'dev';
 //var environment = 'qa';
-var environment = 'demo';
+//var environment = 'demo';
 //var environment = 'local';
-//var environment = 'prod';
+var environment = 'prod';
 
-var _kioskversion = '3.3';
+var _kioskversion = '3.2';  
 var _kiosklicense = 'store';
 
 //var _kiosklicense = 'enterprise';
@@ -95,7 +95,7 @@ var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&
 var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
 var _appCheckURL = 'appcheck.php';
 var _iosEnterpriseVersionAppCheckURL = _baseURL+'iosenterpriseversionappcheck.php';
-var _purchasePageURL = 'index.php?moduleType=Module_Content&task=text&article=offering-kiosk-giving-kiosk';
+var _purchasePageURL = 'https://continue-to-give-kiosk-center.myshopify.com/collections/all';
 var _lockKioskHelpURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_ios_kiosk_mode';
 var _enterpriseDownloadURL = 'itms-services://?action=download-manifest&url='+_baseURL+_whitelabel+'_offering_kiosk.plist';
 

@@ -602,6 +602,14 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
+    },
+    {
+        "file": "plugins/com.wodify.cordova.plugin.unimag-swiper/www/unimag-swiper.js",
+        "id": "com.wodify.cordova.plugin.unimag-swiper.UniMag-Swiper",
+        "pluginId": "com.wodify.cordova.plugin.unimag-swiper",
+        "clobbers": [
+            "cordova.plugins.unimag.swiper"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -627,7 +635,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.4",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "com.wodify.cordova.plugin.unimag-swiper": "0.0.2"
 }
 // BOTTOM OF METADATA
 });

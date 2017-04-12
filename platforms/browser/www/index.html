@@ -27,21 +27,21 @@
 		
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		
-		
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
-		
-		
+	
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/ctg.min.css" />
 			
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/stylesmall.css" />
-				
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 	
-		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-       
+
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.0.min.js"></script>
+		
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
+		
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/unimag-swiper.js"></script>
 		
 		
 		
@@ -268,7 +268,7 @@
 							</p>
 						</div>
 						<div class='smallScreen-setupSteps' style='display:none;'>							
-							<div class ='step-outer step-claimorganization-outer' onclick='openSignupPage();'>
+							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text'>
 										Claim Your Organization!
@@ -278,7 +278,7 @@
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer appleonly applestoresafe'>
+							<div class ='step-outer applestoresafe'>
 								<span class='step-inner-wrapper' onclick='loadPurchasePage();'>
 									<span class='step-text'>
 										Get a card reader
@@ -288,7 +288,7 @@
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer'>
+							<div class ='step-outer applestoresafe'>
 								<span class='step-inner-wrapper' onclick='loadPurchasePage();'>
 									<span class='step-text'>
 										Get a kiosk stand
@@ -309,7 +309,7 @@
 								</span>
 							</div>
 							<div class ='step-outer'>
-								<span class='step-inner-wrapper appleonly' onclick='loadLearnMorePage();'>
+								<span class='step-inner-wrapper applestoresafe' onclick='loadLearnMorePage();'>
 									<span class='step-text'>
 										Learn more about <script type="text/javascript">document.write(_whitelabelfullname);</script>
 									</span>
@@ -319,22 +319,22 @@
 								</span>
 							</div>
 						</div>
-						<div class='largeScreen-setupSteps' style='display:none;'>							
-							<div class ='step-outer step-claimorganization-outer' onclick='openSignupPage();'>
+						<div class='largeScreen-setupSteps' style='display:none;'>	 						
+							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text' style='height:55px; line-height:55px;'>
 										Claim Your Organization! &#10140;
 									</span>									
 								</span>
 							</div>
-							<div class ='step-outer appleonly applestoresafe'>
+							<div class ='step-outer applestoresafe'>
 								<span class='step-inner-wrapper '>
 									<span class='step-text' style='height:55px; line-height:55px;' onclick='loadPurchasePage();'>
 										Get a card reader &#10140;
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer'>
+							<div class ='step-outer applestoresafe'>
 								<span class='step-inner-wrapper' style='height:55px; line-height:55px;' onclick='loadPurchasePage();'>
 									<span class='step-text'>
 										Get a kiosk stand &#10140;
@@ -348,7 +348,7 @@
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer appleonly'>
+							<div class ='step-outer applestoresafe'>
 								<span class='step-inner-wrapper' style='height:55px; line-height:55px;' onclick='loadLearnMorePage();'>
 									<span class='step-text'>
 										Learn more about <script type="text/javascript">document.write(_whitelabelfullname);</script> &#10140;
@@ -359,7 +359,7 @@
 					</div>
 					
 					<a style="display:none;" href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
-					<div style='text-align:center; padding:10px 5px 10px 5px;'>
+					<div class = 'applestoresafe' style='text-align:center; padding:10px 5px 10px 5px;'>
 					To learn more about how our revolutionary fundraising tools can help your organization, visit us on the web at <a onclick='loadLearnMorePage();'><script type="text/javascript">document.write(_whitelabeldisplayurl);</script></a> 
 					</div>
 				</div>
@@ -480,7 +480,7 @@
 			<div data-role="page" id="startreceivingdonationspage">
 				<div >
 					<div data-role="header" >
-						<div style='padding:5px; background-color:white; border-bottom:1px solid grey;'>
+						<div style='padding:15px 5px; background-color:white; border-bottom:1px solid grey;'>
 							<span class='mailflowbutton' onclick ="javascript:openDonationPage('');"  data-transition="slidefade" data-inline="true">Giving Mode &#10140;</span>
 							<span class='mailflowbutton' onclick ="javascript:openDonationPage('/donation_prompt?show_purchase_form=true');"  data-transition="slidefade" data-inline="true">Point Of Sale Mode &#10140;</span>
 						</div>
@@ -513,7 +513,7 @@
 							</p>
 						
 							<span class='cancelflowbutton' onclick ="javascript:closeStartRecivingDonationsPage();"  data-transition="reverse slidefade" data-inline="true">LATER</span>
-							<span class='mailflowbutton' onclick ="javascript:openSignupPage();"  data-transition="slidefade" data-inline="true">ClAIM MY ORGANIZATION &#10140;</span>
+							<span class='mailflowbutton applestoresafe' onclick ="javascript:openSignupPage();"  data-transition="slidefade" data-inline="true">ClAIM MY ORGANIZATION &#10140;</span>
 						</div>
 						<div id='startrecievingdonationsclaimeddiv' >
 							<span class='cancelflowbutton' onclick ="javascript:closeStartRecivingDonationsPage();"  data-transition="reverse slidefade" data-inline="true">Close</span>
