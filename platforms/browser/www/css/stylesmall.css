@@ -1,5 +1,7 @@
 
-.smallScreen .mailflowbutton
+@media  (max-width: 767px) {
+
+ .mailflowbutton
 {
 	
 	font-size: 14px;
@@ -11,7 +13,7 @@
 	
 
 }
-.smallScreen .cancelflowbutton
+ .cancelflowbutton
 {
 	font-size: 14px;
 	
@@ -21,7 +23,7 @@
 	
 
 }
-.smallScreen .step-outer
+ .step-outer
 {
  
 	width:255px;
@@ -30,12 +32,12 @@
 
 }
 
-.smallScreen .step-inner-wrapper
+ .step-inner-wrapper
 {
 	width:250px;
 	
 }
-.smallScreen .step-number
+ .step-number
 {
 	line-height:55px;	 
 	width:45px;  
@@ -43,21 +45,21 @@
 	font-size:1.7em;
 	
 }
-.smallScreen .step-text
+ .step-text
 {
 	
 	width:150px;
 	font-size:1.2em;
 	padding-left:8px;
 }
-.smallScreen .step-start
+ .step-start
 {
 	
 	width:25px;
 	
 	font-size:1em;
 }
-.smallScreen .step-edit
+ .step-edit
 {
 	
 	width:25px;
@@ -65,7 +67,7 @@
 	font-size:1em;
 }
 
-.smallScreen .step-checkbox
+ .step-checkbox
 {
 	
 	width:45px; 
@@ -76,7 +78,7 @@
 
 /* completed version of divs */
 
-.smallScreen .completed .step-number
+ .completed .step-number
 {
 	display:none; 
 }
@@ -89,3 +91,5 @@
 
 
 /* end jqury override */
+
+}

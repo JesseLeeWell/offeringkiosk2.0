@@ -27,10 +27,11 @@
 		
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		
-	
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme-spacelab.min.css" />	
 		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/ctg.min.css" />
-			
+		
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/stylesmall.css" />
 
@@ -41,8 +42,6 @@
         <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/unimag-swiper.js"></script>
-		
 		
 		
 	</head>
@@ -69,7 +68,7 @@
 					<div id='kioskOrganizationDisplayName' style='text-align:center;'>
 							
 					</div>
-					<div class='largeScreen-setupSteps' style='display:none;'>
+					<div class='hidden-sm-down' >
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
@@ -164,7 +163,7 @@
 						<div class='spacer'></div><div class='spacer'></div>
 						
 					</div>
-					<div class='smallScreen-setupSteps' style='display:none;'>
+					<div class='hidden-md-up' >
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
@@ -267,7 +266,7 @@
 								Helpful Links
 							</p>
 						</div>
-						<div class='smallScreen-setupSteps' style='display:none;'>							
+						<div class='hidden-md-up' >							
 							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text'>
@@ -298,8 +297,8 @@
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer'>
-								<span class='step-inner-wrapper appleonly' onclick='loadLockKioskHelp();'>
+							<div class ='step-outer appleonly'>
+								<span class='step-inner-wrapper ' onclick='loadLockKioskHelp();'>
 									<span class='step-text'>
 										How to lock device to kiosk app
 									</span>
@@ -308,8 +307,8 @@
 									</span>
 								</span>
 							</div>
-							<div class ='step-outer'>
-								<span class='step-inner-wrapper applestoresafe' onclick='loadLearnMorePage();'>
+							<div class ='step-outer applestoresafe'>
+								<span class='step-inner-wrapper ' onclick='loadLearnMorePage();'>
 									<span class='step-text'>
 										Learn more about <script type="text/javascript">document.write(_whitelabelfullname);</script>
 									</span>
@@ -318,8 +317,9 @@
 									</span>
 								</span>
 							</div>
+							<div style="clear:both"></div>
 						</div>
-						<div class='largeScreen-setupSteps' style='display:none;'>	 						
+						<div class='hidden-sm-down' >	 						
 							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text' style='height:55px; line-height:55px;'>
@@ -356,8 +356,9 @@
 								</span>
 							</div>
 						</div>
+						<div style="clear:both"></div>
 					</div>
-					
+					<div style="clear:both"></div>
 					<a style="display:none;" href="javascript:clearDataForTesting();" data-role="button" data-transition="slidefade" data-inline="true">Clear Data</a>
 					<div class = 'applestoresafe' style='text-align:center; padding:10px 5px 10px 5px;'>
 					To learn more about how our revolutionary fundraising tools can help your organization, visit us on the web at <a onclick='loadLearnMorePage();'><script type="text/javascript">document.write(_whitelabeldisplayurl);</script></a> 
@@ -366,13 +367,13 @@
 				
 				<div data-role="footer" style='text-align:center;' data-position="fixed">
 					<div class='settingsfooter'>
-						<span style='width:32%; display:inline-block;border-right:1px solid grey; background-color:#00adee; color:white;' onclick="javascript:loadSettingsPage();">
+						<span style='padding: 20px 0px 15px 0px; width:32%; display:inline-block;border-right:1px solid grey; background-color:#00adee; color:white;' onclick="javascript:loadSettingsPage();">
 							<p >Settings</p>
 						</span>
-						<span style='width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadContactRequest();">
+						<span style='padding: 20px 0px 15px 0px; width:32%; display:inline-block;border-right:1px solid grey;' onclick="javascript:loadContactRequest();">
 							<p >Contact</p>
 						</span>
-						<span style='width:32%; display:inline-block;' onclick="javascript:loadMoreInfo();">
+						<span style='padding: 20px 0px 15px 0px; width:32%; display:inline-block;' onclick="javascript:loadMoreInfo();">
 							<p >Intro</p>
 						</span>
 					</div>
@@ -529,6 +530,6 @@
 	</footer>
 	
 	
-        
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>    
         
 </html>
