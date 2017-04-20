@@ -67,8 +67,8 @@ else if(environment == 'demo')
 }
 else if(environment == 'local')
 {
-	var _baseURL = 'http://local.bugfixes.'+_whitelabel+'.com/';
-	var _kioskURL = 'http://local.bugfixes.'+_whitelabel+'.com/';
+	var _baseURL = 'http://local.workingbranch.'+_whitelabel+'.com/';
+	var _kioskURL = 'http://local.workingbranch.'+_whitelabel+'.com/';
 }
 else if(environment == 'prod')
 {
@@ -97,6 +97,7 @@ var _appCheckURL = 'appcheck.php';
 var _iosEnterpriseVersionAppCheckURL = _baseURL+'iosenterpriseversionappcheck.php';
 var _purchasePageURL = 'https://continue-to-give-kiosk-center.myshopify.com/collections/all';
 var _lockKioskHelpURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_ios_kiosk_mode';
+var _KioskIntroURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_kiosk_intro';
 var _enterpriseDownloadURL = 'itms-services://?action=download-manifest&url='+_baseURL+_whitelabel+'_offering_kiosk.plist';
 
 var browserwindow = null;

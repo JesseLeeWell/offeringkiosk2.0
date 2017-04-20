@@ -712,35 +712,13 @@ function loadSettingsPage()
 function loadMoreInfo(pagetype)
 {
 	storageSet('hideintro', true);
-	switch(pagetype)
-		{
-			case 'dialog':
-			   $(':mobile-pagecontainer').pagecontainer('change', 'intro.html', {
-					transition: 'pop',
-					changeHash: false,
-					reverse: false,
-					showLoadMsg: true,
-					role: "dialog"
-				});
-			  break;
-			
-			default:
-				//using the click technique so that we can load it with a transistion and still use the external relation tag it has on a tags
-				//alert("here");
-				//$('#moreinfolink').click();
-				/*
-				 $(':mobile-pagecontainer').pagecontainer('change', 'intro.html', {
-					transition: 'slidefade',
-					changeHash: false,
-					reverse: false,
-					showLoadMsg: true,
-					rel: 'external'
-				});
-			*/
-			  browserwindow = window.open('intro.html', '_self', 'location=yes');
-			  break;
-		}
 	
+			
+			
+			 var url = _kioskURL + _KioskIntroURL;
+	
+			browserwindow = window.open(url, '_blank', 'location=no');
+			  
 
 }
 
