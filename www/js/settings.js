@@ -6,7 +6,7 @@ var environment = 'demo';
 //var environment = 'local';
 //var environment = 'prod';
 
-var _kioskversion = '3.0';  
+var _kioskversion = '3.2';  
 var _kiosklicense = 'store';
 
 //var _kiosklicense = 'enterprise';

@@ -106,10 +106,10 @@ function determinStartPage()
                          theme: 'a',
                          html: ""
                          });
-		setTimeout( function() {
+		setTimeout( function() { $.mobile.loading().hide();
                    loadMoreInfo('');
                    
-                   }, 2000 );
+                   }, 1000 );
         
 		
 	}
@@ -717,7 +717,9 @@ function loadMoreInfo(pagetype)
 			
 			 var url = _kioskURL + _KioskIntroURL;
 	
-			browserwindow = window.open(url, '_blank', 'location=no');
+			browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=Get Started,toolbarposition=top');
+			
+			browserwindow.addEventListener('loadstart', iabLoadStartDonation);
 			  
 
 }
