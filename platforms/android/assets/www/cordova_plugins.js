@@ -21,7 +21,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-device": "1.1.5",
-    "com.wodify.cordova.plugin.unimag-swiper": "0.0.2"
+    "com.wodify.cordova.plugin.unimag-swiper": "0.0.2",
+    "cordova-plugin-queries-schemes": "0.1.1"
 };
 // BOTTOM OF METADATA
 });

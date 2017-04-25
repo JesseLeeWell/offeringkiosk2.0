@@ -9,6 +9,9 @@
     "installed_plugins": {
         "com.wodify.cordova.plugin.unimag-swiper": {
             "PACKAGE_NAME": "com.continuetogive.kiosk"
+        },
+        "cordova-plugin-queries-schemes": {
+            "PACKAGE_NAME": "com.continuetogive.kiosk"
         }
     },
     "dependent_plugins": {

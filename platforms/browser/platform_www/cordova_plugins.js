@@ -636,7 +636,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.4",
     "cordova-plugin-whitelist": "1.2.2",
-    "com.wodify.cordova.plugin.unimag-swiper": "0.0.2"
+    "com.wodify.cordova.plugin.unimag-swiper": "0.0.2",
+    "cordova-plugin-queries-schemes": "0.1.1"
 }
 // BOTTOM OF METADATA
 });
