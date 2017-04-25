@@ -1150,8 +1150,53 @@ function updateIOSEnterpriseApp(result)
     
 }
 
-/* card reader stuff
-*/
+/*
+ 
+ Card reader stuff
+ */
+function activateCardReader()
+{
+    //onlyu call this if IOS for now
+    
+    if(isApple() && getAppleSafe())
+    {
+           //activate sdk and register notification callback
+        unimag.activateSDK(function(type) {
+            var d = {};
+            var E = unimag.NotifEnum;
+            d[E.Attach    ]='Attach'; //attached, but haven't connected
+            d[E.Detach    ]='Detached'    ; //reader detached
+            d[E.Connect   ]='Connected'   ; //reader connected, ready
+            d[E.Disconnect]='Disconnected'; //when card reader is first removed
+                
+            if(d[type] =='Attach' )
+            {
+                 
+                startTaskConnect();
+            }
+                           /*
+           if(!(window.sessionStorage.getItem('already_initialSetup')))
+           {
+               initialSetup();
+           }
+                            */
+                           
+        });
+        /*
+        //this is dumb, but if the reader is not attached, the callback never gets fired.  So we need to move on
+        setTimeout(function(){
+                   if(!(window.sessionStorage.getItem('already_initialSetup')))
+                   {
+                   initialSetup();
+                   }
+                   
+                   },500);
+         */
+    }
+    
+   
+ 
+}
 
 function startTaskConnect()
 {
