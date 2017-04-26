@@ -1247,7 +1247,7 @@ function startTaskSwipe()
 
 		//sendCardData(data);
         //startTaskSwipe();
-        //startTaskConnect();
+        //startTaskConnect(); 
 
   });
 
