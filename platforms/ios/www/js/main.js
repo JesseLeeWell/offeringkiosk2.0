@@ -1158,11 +1158,13 @@ function updateIOSEnterpriseApp(result)
 {
     //onlyu call this if IOS for now
     
-    if(isApple() && getAppleSafe())
+    if(isApple() && getAppleSafe() || true)
     {
 		//alert("in if");
-    	cordova.plugins.unimag.swiper.setReaderType('shuttle');
+    	
+  		
   		cordova.plugins.unimag.swiper.activate();
+		cordova.plugins.unimag.swiper.setReaderType('shuttle');
 		//alert(" before shuttle connected");
 
     	cordova.plugins.unimag.swiper.on('connected', function () {
@@ -1175,6 +1177,14 @@ function updateIOSEnterpriseApp(result)
 		    
 
 		 });
+
+    	cordova.plugins.unimag.swiper.on('timeout', function (e) {
+		    if (connected) {
+		      console.log('+++++++++++++++++++++++++++++++ERROR: Swipe timed out - ' + e.detail);
+		    } else {
+		      console.log('+++++++++++++++++++++++++++++++ERROR: Connection timed out - ' + e.detail);
+		    }
+		  });
 
 
         /*
@@ -1222,7 +1232,7 @@ function startTaskSwipe()
     	
 		alert(JSON.stringify(e));
 		
- 
+ 		alert(JSON.stringify(e));
     	var data = JSON.parse(e.detail);
 		alert(JSON.stringify(data));
 
@@ -1593,7 +1603,7 @@ function cancelUnlockKioskIfStateIsCorrect()
 }
 function cancelUnlockKiosk()
 {
-    
+     
     //reset the screen to nothing
     $('#unlockpin').val('');
 	var securecancelpath = storageGet('securecancelpath');
@@ -1617,3 +1627,4 @@ function cancelUnlockKiosk()
 	}
 }
 /* ------ end unlock kiosk -----*/
+
