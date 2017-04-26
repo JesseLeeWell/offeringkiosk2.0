@@ -202,7 +202,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		mxTpWpN+pkdBsMW5iyRITmQYFPQ=
+		JqNYtzo8G1pNM60UPLE5/BqL8ik=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -210,7 +210,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		O/Xetv8SRLZusO1f6J2SXlGoskc=
+		6LqS015Kdqi25+BL5uCL6xm5QMs=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		ArjxrTDMCfDp9xG5G6SwchnKCCA=
+		eDezADXYSnT5m1Meha4YABm0c4s=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -294,7 +294,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		h0BZyasG1S2NUYhHyU7h5O1pOv4=
+		N8Q0uq1mgSANzzHRV59IV4bjyoA=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -542,7 +542,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		6WcIkpGp1NxNE8h3/U7SRogPDjI=
+		c9xGsR7Mi3nslI6HqeMdkM/si/M=
 		</data>
 		<key>www/intro.html</key>
 		<data>
@@ -578,7 +578,7 @@
 		</data>
 		<key>www/js/main.js</key>
 		<data>
-		Y1ZzYLc1LmII+Y5IgJNAGY4k6aY=
+		3bSqCMRt+10OoUY/8Ctg65bCrlM=
 		</data>
 		<key>www/js/settings.js</key>
 		<data>
@@ -586,7 +586,7 @@
 		</data>
 		<key>www/js/unimag-swiper.js</key>
 		<data>
-		CIQHD6MukZ1QBsqjux53WaIBp1Q=
+		jSdm8QtXSHkKyrzt5k5Sp7xK2Yw=
 		</data>
 		<key>www/js/unimag.js</key>
 		<data>
@@ -2067,11 +2067,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mxTpWpN+pkdBsMW5iyRITmQYFPQ=
+			JqNYtzo8G1pNM60UPLE5/BqL8ik=
 			</data>
 			<key>hash2</key>
 			<data>
-			RiBF9PJ/shUJgviNmcjy/9M/j1V9T0EPMjEImIOUSrY=
+			+GqqUQHhYezymkFQdzURIfPx8TB/DvTpryvQX9mSB74=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -2089,11 +2089,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O/Xetv8SRLZusO1f6J2SXlGoskc=
+			6LqS015Kdqi25+BL5uCL6xm5QMs=
 			</data>
 			<key>hash2</key>
 			<data>
-			4/yGrz5ocJNujBV1TJWn9+eNPLQxXYQ0yrbB8i2wsQo=
+			tg1scqhcbmFBmg86RSX5JCwkf37xznwmg6Foq2/cmH4=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -2265,11 +2265,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ArjxrTDMCfDp9xG5G6SwchnKCCA=
+			eDezADXYSnT5m1Meha4YABm0c4s=
 			</data>
 			<key>hash2</key>
 			<data>
-			6ebfr95FjZ1+C0Ig/kZ+tGdEy7MwWASU7/kEjNI+FII=
+			1h5u9teT3bP8yjsSCteXSBBaUenwBrYfVlgsBruclMM=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -2298,11 +2298,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h0BZyasG1S2NUYhHyU7h5O1pOv4=
+			N8Q0uq1mgSANzzHRV59IV4bjyoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wEeQjnomHuaU8X/1byN+xQtv6rumZbzxLMb4fli2kec=
+			gZt03WeS59jDYpHUmZDdFj/F1dnQMcAPpdfScpCyZsM=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -2980,11 +2980,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6WcIkpGp1NxNE8h3/U7SRogPDjI=
+			c9xGsR7Mi3nslI6HqeMdkM/si/M=
 			</data>
 			<key>hash2</key>
 			<data>
-			Oc/ByDwFcx0x3JS83nYvARM6pCI74rXvVkzgNKOIitA=
+			XMiX6UZqEvkqiJd91raS/qhjGdggzw48kMp2xi6cw7A=
 			</data>
 		</dict>
 		<key>www/intro.html</key>
@@ -3079,11 +3079,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y1ZzYLc1LmII+Y5IgJNAGY4k6aY=
+			3bSqCMRt+10OoUY/8Ctg65bCrlM=
 			</data>
 			<key>hash2</key>
 			<data>
-			dC2QN1DUZ6bbpWcZI+SjQ6fx/nZCwwdm8z+i5VHaAJw=
+			igwOw9XzSw0sJFUu4wnFFXGCrI/QvQLEn0wyPhMHfnQ=
 			</data>
 		</dict>
 		<key>www/js/settings.js</key>
@@ -3101,11 +3101,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CIQHD6MukZ1QBsqjux53WaIBp1Q=
+			jSdm8QtXSHkKyrzt5k5Sp7xK2Yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			soO7hVY1SEdBfmIk9xrf9gqQ2L8bh8hSNXTiGRUDwjk=
+			gjweOKx2fIpXYuMe+MTYPPRoD9YDmUIMXsBbdup38cg=
 			</data>
 		</dict>
 		<key>www/js/unimag.js</key>
