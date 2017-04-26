@@ -1,4 +1,8 @@
 
+alert("also here"); 
+console.log("loaded unimag stuff after this");
+
+
 var unimag = {};
 
 (function(){
@@ -106,7 +110,8 @@ function unimagModule(){
   };
   um.startTaskSwipe        = function (taskCallback) {
     argscheck.checkArgs('f' , 'unimag.startTaskSwipe'      , arguments);
-    if (!isSDKActive) return;
+    if (!isSDKActive){console.log("sdk is not active"); return; }
+    console.log("sdk is active -- call wrapper task");
     cordova.exec(getTaskCallbackWrapper(taskCallback), null, "UniMag", "startTaskSwipe"      , []);
   };
   um.startTaskSendCommand  = function (taskCallback, command) {

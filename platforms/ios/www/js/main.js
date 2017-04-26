@@ -1174,12 +1174,14 @@ function activateCardReader()
     
     if(isApple() && getAppleSafe())
     {
+		//alert("in if");
     	cordova.plugins.unimag.swiper.setReaderType('shuttle');
   		cordova.plugins.unimag.swiper.activate();
-
+		//alert(" before shuttle connected");
 
     	cordova.plugins.unimag.swiper.on('connected', function () {
   			console.log("shuttle connected");
+			//alert("shuttle connected");
     		
   			startTaskConnect();
 
@@ -1232,16 +1234,18 @@ function startTaskSwipe()
 
     	console.log("swipe success!");
     	
-
+		alert(JSON.stringify(e));
+		
  
     	var data = JSON.parse(e.detail);
+		alert(JSON.stringify(data));
 
  	
 		console.log('cardholder name: ' + data.first_name + ' ' + data.last_name);
 		console.log('card number:' + data.card_number);
 		console.log('expiration:' + data.expiry_month + '/' + data.expiry_year);
 
-		sendCardData(data);
+		//sendCardData(data);
         //startTaskSwipe();
         //startTaskConnect();
 
