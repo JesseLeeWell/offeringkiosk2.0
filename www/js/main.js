@@ -23,7 +23,7 @@ function onDeviceReady() {
 	setapplesafe();
     
     //activate card reader
-    //activateCardReader();
+    activateCardReader();
    
 	setPagePaymentInformation(setStepClaimOrganization);
 	setupSettingsPage();
@@ -236,7 +236,7 @@ function iabLoadStart(event) {
 	if(cururl.indexOf("donation_prompt") != -1)
 	{
         //activate card reader
-        activateCardReader();
+        //activateCardReader();
 		
         //startTaskSwipe();
 		
@@ -1154,34 +1154,29 @@ function updateIOSEnterpriseApp(result)
  
  Card reader stuff
  */
-function activateCardReader()
+ function activateCardReader()
 {
     //onlyu call this if IOS for now
     
     if(isApple() && getAppleSafe())
     {
-           //activate sdk and register notification callback
-        unimag.activateSDK(function(type) {
-            var d = {};
-            var E = unimag.NotifEnum;
-            d[E.Attach    ]='Attach'; //attached, but haven't connected
-            d[E.Detach    ]='Detached'    ; //reader detached
-            d[E.Connect   ]='Connected'   ; //reader connected, ready
-            d[E.Disconnect]='Disconnected'; //when card reader is first removed
-                
-            if(d[type] =='Attach' )
-            {
-                 
-                startTaskConnect();
-            }
-                           /*
-           if(!(window.sessionStorage.getItem('already_initialSetup')))
-           {
-               initialSetup();
-           }
-                            */
-                           
-        });
+		//alert("in if");
+    	cordova.plugins.unimag.swiper.setReaderType('shuttle');
+  		cordova.plugins.unimag.swiper.activate();
+		//alert(" before shuttle connected");
+
+    	cordova.plugins.unimag.swiper.on('connected', function () {
+  			console.log("shuttle connected");
+			//alert("shuttle connected");
+    		
+  			startTaskConnect();
+
+
+		    
+
+		 });
+
+
         /*
         //this is dumb, but if the reader is not attached, the callback never gets fired.  So we need to move on
         setTimeout(function(){
@@ -1198,73 +1193,58 @@ function activateCardReader()
  
 }
 
+
 function startTaskConnect()
 {
-    
-    unimag.startTaskConnect(function(task, taskNotif, info)
+    console.log("start task connect");
+
+    cordova.plugins.unimag.swiper.swipe(function successCallback () 
     {
-        var E = unimag.TaskNotifEnum;
-        switch(taskNotif)
-        {
-            case E.StartFailed:
-            alert(task+' task failed to start: '+info.StartFailedReason);
-            break;
-            case E.Started:
-            //alert('Connecting');
-            break;
-            case E.Stopped:
-            //alert(null);
-            if (!info.ok)
-            {
-                startTaskConnect();
-            }
-            else
-            {
-                startTaskSwipe();
-            }
-            break;
-        }
-    });
+		console.log('+++++++++++++++++++++++++++++++SUCCESS: Swipe started.');
+
+		startTaskSwipe();
+
+	}, function errorCallback () 
+	{
+		console.log('+++++++++++++++++++++++++++++++ERROR: Could not start swipe.');
+	});
+
+
 }
+
 function startTaskSwipe()
 {
-    
-    unimag.startTaskSwipe(function(task, taskNotif, info) {
-        var E = unimag.TaskNotifEnum;
-        switch(taskNotif)
-        {
-            case E.StartFailed:
-                alert(task+' task failed to start: '+info.StartFailedReason);
-            break;
-            case E.Started:
-            //alert('Waiting for Swipe');
-            break;
-            case E.Stopped:
-                //alert(null);
-                if(!info.ok)
-                {
-                    showMessage('Swipe failed please try again', '', " ", "OK");
-                    startTaskSwipe();
-                }
-                else if (info.data)
-                {
-                    //alert('card swipe:');
-                    //alert('raw: """\n'+info.data+'\n"""');
-                    //alert('hex: """\n'  +getBase16 (info.data)+'\n"""');
-                    //alert('ascii: """\n'+getStrRepr(info.data)+'\n"""');
-                    sendCardData(info.data);
-                    startTaskSwipe();
+    console.log("start task swipe");
 
-                }
-            break;
-        }
-      });
+    cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
+
+    	console.log("swipe success!");
+    	
+		alert(JSON.stringify(e));
+		
+ 
+    	var data = JSON.parse(e.detail);
+		alert(JSON.stringify(data));
+
+ 	
+		console.log('cardholder name: ' + data.first_name + ' ' + data.last_name);
+		console.log('card number:' + data.card_number);
+		console.log('expiration:' + data.expiry_month + '/' + data.expiry_year);
+
+		sendCardData(data);
+        //startTaskSwipe();
+        //startTaskConnect(); 
+
+  });
+
+    
 
 }
+
 function sendCardData(cardData)
 {
     
-    browserwindow.executeScript({code: "cardSwipeIdTeck('"+ getStrRepr(cardData)+"');"});
+    browserwindow.executeScript({code: "cardSwipeIdTeck2_0('"+ getStrRepr(cardData)+"');"});
 }
 
 function parseData(data)

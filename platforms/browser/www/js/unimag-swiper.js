@@ -1,6 +1,6 @@
-alert("here"); 
+
 var exec = require('cordova/exec');
-alert("here");
+
 var getReaderTypes = function() {
 	if (device.platform == 'Android') {
 		return {
@@ -22,6 +22,7 @@ var getReaderTypes = function() {
 var Swiper = function() {};
 
 Swiper.activate = function(success, error) {
+	console.log("swipe activate");
 	exec(success, error, 'UnimagSwiper', 'activateReader', []);
 };
 
@@ -30,6 +31,7 @@ Swiper.deactivate = function(success, error) {
 };
 
 Swiper.swipe = function (success, error) {
+	console.log("swipe function");
 	exec(success, error, 'UnimagSwiper', 'swipe', []);
 };
 
@@ -38,8 +40,9 @@ Swiper.enableLogs = function (enable, success, error) {
 };
 
 Swiper.setReaderType = function (type, success, error) {
-	var readerType = getReaderTypes()[type];
+	var readerType = 'UMREADER_SHUTTLE';//getReaderTypes()[type];
 	if (readerType) {
+		console.log("set reader type...");
 		exec(success, error, 'UnimagSwiper', 'setReaderType', [readerType]);
 	} else console.log('Could not set reader type - invalid type "' + type + '" provided.');
 };
