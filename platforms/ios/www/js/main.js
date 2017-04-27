@@ -17,7 +17,7 @@ function onDeviceResume()
 function onDeviceReady() {
     
     //see if they need a new update
-    
+    connected = false;
     checkforenterpriseupdate() 
     
 	setapplesafe();
@@ -1158,94 +1158,85 @@ function updateIOSEnterpriseApp(result)
 {
     //onlyu call this if IOS for now
     
-    if(isApple() && getAppleSafe() || true)
+    if(isApple() && getAppleSafe() )
     {
-		//alert("in if");
-    	
+		
   		
   		cordova.plugins.unimag.swiper.activate();
 		cordova.plugins.unimag.swiper.setReaderType('shuttle');
 		//alert(" before shuttle connected");
 
-    	cordova.plugins.unimag.swiper.on('connected', function () {
-  			console.log("shuttle connected");
-			//alert("shuttle connected");
+    	var swipe = function () {
     		
-  			startTaskConnect();
+    if (connected) {
+    	
+      cordova.plugins.unimag.swiper.swipe(function successCallback () {
+        console.log('SUCCESS: Swipe started.'); 
+      }, function errorCallback () {
+        console.log('ERROR: Could not start swipe.');
+      });
+    } else console.log('ERROR: Reader is not connected.');
+  }
 
-
-		    
-
-		 });
-
-    	cordova.plugins.unimag.swiper.on('timeout', function (e) {
-		    if (connected) {
-		      console.log('+++++++++++++++++++++++++++++++ERROR: Swipe timed out - ' + e.detail);
-		    } else {
-		      console.log('+++++++++++++++++++++++++++++++ERROR: Connection timed out - ' + e.detail);
-		    }
-		  });
-
-
-        /*
-        //this is dumb, but if the reader is not attached, the callback never gets fired.  So we need to move on
-        setTimeout(function(){
-                   if(!(window.sessionStorage.getItem('already_initialSetup')))
-                   {
-                   initialSetup();
-                   }
-                   
-                   },500);
-         */
-    }
+  cordova.plugins.unimag.swiper.on('connected', function () {
+  	
+    connected = true;
+    swipe();
     
+  });
+
+  cordova.plugins.unimag.swiper.on('disconnected', function () {
+    connected = false;
+  });
+
+  cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
+    var data = JSON.parse(e.detail);
+    console.log('cardholder name: ' + data.first_name + ' ' + data.last_name);
+    console.log('card number:' + data.card_number);
+    console.log('expiration:' + data.expiry_month + '/' + data.expiry_year);
+    startTaskSwipe(e);
+    swipe();
+  });
+
+  cordova.plugins.unimag.swiper.on('swipe_error', function () {
+    alert('ERROR: Could not parse card data.');
+    swipe();
+  });
+
+  cordova.plugins.unimag.swiper.on('timeout', function (e) {
+    if (connected) {
+      console.log('ERROR: Swipe timed out - ' + e.detail);
+    } else {
+      console.log('ERROR: Connection timed out - ' + e.detail);
+    }
+    swipe();
+  });
+
    
+    
+   }
  
 }
 
 
-function startTaskConnect()
-{
-    console.log("start task connect");
-
-    cordova.plugins.unimag.swiper.swipe(function successCallback () 
-    {
-		console.log('+++++++++++++++++++++++++++++++SUCCESS: Swipe started.');
-
-		startTaskSwipe();
-
-	}, function errorCallback () 
-	{
-		console.log('+++++++++++++++++++++++++++++++ERROR: Could not start swipe.');
-	});
-
-
-}
-
-function startTaskSwipe()
+function startTaskSwipe(e)
 {
     console.log("start task swipe");
 
-    cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
-
     	console.log("swipe success!");
     	
-		alert(JSON.stringify(e));
+		//alert(JSON.stringify(e));
 		
- 		alert(JSON.stringify(e));
+ 		//alert(JSON.stringify(e));
     	var data = JSON.parse(e.detail);
 		alert(JSON.stringify(data));
 
- 	
-		console.log('cardholder name: ' + data.first_name + ' ' + data.last_name);
-		console.log('card number:' + data.card_number);
-		console.log('expiration:' + data.expiry_month + '/' + data.expiry_year);
-
-		sendCardData(data);
+		alert(data.trimmedUnimagData);
+		sendCardData(data.trimmedUnimagData);
         //startTaskSwipe();
         //startTaskConnect(); 
 
-  });
+  
 
     
 
@@ -1254,7 +1245,7 @@ function startTaskSwipe()
 function sendCardData(cardData)
 {
     
-    browserwindow.executeScript({code: "cardSwipeIdTeck2_0('"+ getStrRepr(cardData)+"');"});
+    browserwindow.executeScript({code: "cardSwipeIdTeck('"+(cardData)+"');"});
 }
 
 function parseData(data)

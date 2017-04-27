@@ -202,7 +202,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		g5gfqv5C3b7vzAdvWc4RE9KR8yI=
+		2q0NRkm/nAyoDJLBS6Ql4hLrcmA=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -210,7 +210,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		WSI7StTRMVJva46O/U11I199u6U=
+		jOi9Fe5ZGkQiARQBIFJ+MLvZOgI=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		BveNYv/uToJKbq/w9XBF8Uu6Tnk=
+		EywLEGAiP3PYmcV+PCUdmfsp/sA=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -542,7 +542,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		eElL92BEW67REs1hNuKUdojA3yw=
+		cb+vAnitqp/u5qtRjeSnNy+z4rY=
 		</data>
 		<key>www/intro.html</key>
 		<data>
@@ -578,11 +578,11 @@
 		</data>
 		<key>www/js/main.js</key>
 		<data>
-		bumCiBNEIDhTz1Ko9EOxqZJMm0M=
+		pGRo1/BaKOZE3XjG04zlwQ6Z8Q0=
 		</data>
 		<key>www/js/settings.js</key>
 		<data>
-		GV65OFk/wtcFYH4FuRwTWPCN3Rg=
+		wOzvI2A07Aeu43PDN33MBy92DY0=
 		</data>
 		<key>www/js/unimag-swiper.js</key>
 		<data>
@@ -2067,11 +2067,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g5gfqv5C3b7vzAdvWc4RE9KR8yI=
+			2q0NRkm/nAyoDJLBS6Ql4hLrcmA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZKPTjB5RZv52tVL02Y+1Qxa26fjFDEgXFZ/sjlbnQ5o=
+			iqCCMgV6fjVtn1yXYekk9y5EM7LYLPq05h4OUGDfV1E=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -2089,11 +2089,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WSI7StTRMVJva46O/U11I199u6U=
+			jOi9Fe5ZGkQiARQBIFJ+MLvZOgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/hM/zQwFKDr7KhbbODSAxI6UqQlOEcoCgdk3SwoxDUc=
+			eLR6t9sL2OFiiiozs7IwIx+60fDnuLF7ZR96JcATpZs=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -2265,11 +2265,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BveNYv/uToJKbq/w9XBF8Uu6Tnk=
+			EywLEGAiP3PYmcV+PCUdmfsp/sA=
 			</data>
 			<key>hash2</key>
 			<data>
-			tOijVRviRySYoRAPgs9FZaQc1zXLdnXbL9q5Kz5G/Qs=
+			d9hWYOJOD3HDjGp9OABbKlI5pGsisVoGoyxg/c2Xh3o=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -2980,11 +2980,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eElL92BEW67REs1hNuKUdojA3yw=
+			cb+vAnitqp/u5qtRjeSnNy+z4rY=
 			</data>
 			<key>hash2</key>
 			<data>
-			IJW+DH0Ls79n5ne4nkL3fto5IpKQPPYBL9I0S1dYIVA=
+			3/F52KtmzIZtWVmV37gDEsG1FjnFATjv07Amgpy8SDA=
 			</data>
 		</dict>
 		<key>www/intro.html</key>
@@ -3079,22 +3079,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bumCiBNEIDhTz1Ko9EOxqZJMm0M=
+			pGRo1/BaKOZE3XjG04zlwQ6Z8Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			cF0MJ6GNeP8rQr7evAnzuaoqZ2IlxMUfhD+Peyya0po=
+			r7iZP/nWrp0IKxp+gCqxXi5tCmJNMYwoeLm5NZU/430=
 			</data>
 		</dict>
 		<key>www/js/settings.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GV65OFk/wtcFYH4FuRwTWPCN3Rg=
+			wOzvI2A07Aeu43PDN33MBy92DY0=
 			</data>
 			<key>hash2</key>
 			<data>
-			y9gRblgvGBsAF8a3hWYbnSSYXjGvhC9yVsbp3xY6v7g=
+			p5xDhQhGcD6G+7s4Rl6YIzcYK6uKr6vgD1Urs7oR2ic=
 			</data>
 		</dict>
 		<key>www/js/unimag-swiper.js</key>
