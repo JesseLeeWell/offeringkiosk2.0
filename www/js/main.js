@@ -1216,7 +1216,7 @@ function startTaskSwipe(e)
 function sendCardData(cardData)
 {
 
-    browserwindow.executeScript({code: "cardSwipeIdTeckbase64('"+($.base64.encode(cardData))+"');"});
+    browserwindow.executeScript({code: "cardSwipeIdTeckbase64('"+(btoa(cardData))+"');"});
 }
 
 function parseData(data)
