@@ -539,6 +539,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Offering Kiosk/Plugins/com.wodify.cordova.plugin.unimag-swiper\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.company.continuetogive;
 				PRODUCT_NAME = "Offering Kiosk";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -569,6 +570,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Offering Kiosk/Plugins/com.wodify.cordova.plugin.unimag-swiper\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.company.continuetogive;
 				PRODUCT_NAME = "Offering Kiosk";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
