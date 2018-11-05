@@ -2,11 +2,11 @@
 //environment
 //var environment = 'dev';
 //var environment = 'qa';
-var environment = 'demo';
+var environment = 'prod';
 //var environment = 'local';
-//var environment = 'prod';
+//var environment = 'demo';
 
-var _kioskversion = '3.2';  
+var _kioskversion = '3.5';
 var _kiosklicense = 'store';
 
 //var _kiosklicense = 'enterprise';

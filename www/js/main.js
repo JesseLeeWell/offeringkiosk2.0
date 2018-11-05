@@ -2,7 +2,7 @@
 //
 document.addEventListener("deviceready", onDeviceReady, false);
 document.addEventListener("resume", onDeviceResume, false);
-
+var connected = false;//global var
 // Cordova is ready
 //
 $( document ).ready(function() {
@@ -12,7 +12,12 @@ $( document ).ready(function() {
 function onDeviceResume()
 {
     //alert("resume");
-    onDeviceReady();
+    //onDeviceReady();
+    connected = false;
+    setapplesafe();
+    setPagePaymentInformation(setStepClaimOrganization);
+    setupSettingsPage();
+    determinStartPage();
 }
 function onDeviceReady() {
 
@@ -1139,7 +1144,12 @@ function activateCardReader()
     {
 
 
-        cordova.plugins.unimag.swiper.activate();
+        cordova.plugins.unimag.swiper.activate(function(){
+            console.log("card reader activated");
+        }, function(e){
+            console.error(e);
+        });
+        
         cordova.plugins.unimag.swiper.setReaderType('shuttle');
         //alert(" before shuttle connected");
 
@@ -1149,7 +1159,8 @@ function activateCardReader()
 
                 cordova.plugins.unimag.swiper.swipe(function successCallback () {
                     //console.log('SUCCESS: Swipe started.'); 
-                    }, function errorCallback () {
+                    }, function errorCallback (e) {
+                        console.error(e);
                         //console.log('ERROR: Could not start swipe.');
                 });
             } 
@@ -1160,7 +1171,7 @@ function activateCardReader()
         }
 
         cordova.plugins.unimag.swiper.on('connected', function () {
-
+            console.log("connected");
             connected = true;
             swipe();
 

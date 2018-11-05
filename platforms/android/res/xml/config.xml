@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.continuetogive.kiosk" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.continuetogive.kiosk" version="3.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -14,7 +14,7 @@
         Continue To Give Team
     </author>
     <content src="index.html" />
-    <icon src="icon.png" />
+    <icon src="www/icon.png" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
@@ -45,6 +45,7 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="26" />
     <preference name="permissions" value="none" />
+    <preference name="KeepRunning" value="true" />
 </widget>

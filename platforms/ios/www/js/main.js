@@ -1,94 +1,49 @@
-
-// 
-// 
-// // Wait for Cordova to load
-
+// Wait for Cordova to load
+//
 document.addEventListener("deviceready", onDeviceReady, false);
 document.addEventListener("resume", onDeviceResume, false);
-
+var connected = false;//global var
 // Cordova is ready
 //
-$(document).ready(function () {
-//onDeviceReady();
+$( document ).ready(function() {
+    //onDeviceReady();
 });
 
 function onDeviceResume()
 {
     //alert("resume");
     //onDeviceReady();
+    connected = false;
     setapplesafe();
     setPagePaymentInformation(setStepClaimOrganization);
     setupSettingsPage();
     determinStartPage();
 }
-
 function onDeviceReady() {
+
+    //see if they need a new update
+    connected = false;
+    //checkforenterpriseupdate() 
+
     setapplesafe();
-    if (isApple() && getAppleSafe()) {
-        cordova.plugins.unimag.swiper.activate();
-        //cordova.plugins.unimag.swiper.enableLogs(true);
-        cordova.plugins.unimag.swiper.setReaderType('shuttle');
-        var connected = false;
 
-        var swipe = function () {
-            if (connected) {
-                cordova.plugins.unimag.swiper.swipe(function successCallback() {
-                    //alert('SUCCESS: Swipe started.!');
-                }, function errorCallback(e) {
-                    alert('ERROR: Could not start swipe.');
-                });
-            } else
-                alert('ERROR: Reader is not connected.');
-        }
-
-        cordova.plugins.unimag.swiper.on('connected', function () {
-            connected = true;
-            swipe();
-        });
-
-        cordova.plugins.unimag.swiper.on('disconnected', function () {
-            connected = false;
-        });
-
-        cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
-            var data = JSON.parse(e.detail);
-            //alert('cardholder name: ' + data.first_name + ' ' + data.last_name);
-            //alert('card number:' + data.card_number);
-            //alert('expiration:' + data.expiry_month + '/' + data.expiry_year);
-            sendCardData(data.trimmedUnimagData, function () {
-                swipe();
-            });
-        });
-
-        cordova.plugins.unimag.swiper.on('swipe_error', function () {
-            alert('ERROR: Sorry, Please try again.');
-            swipe();
-        });
-
-        cordova.plugins.unimag.swiper.on('timeout', function (e) {
-            if (connected) {
-                //alert('ERROR: Swipe timed out - ' + e.detail);
-            } else {
-                alert('ERROR: Connection timed out - ' + e.detail);
-            }
-            swipe();
-        });
-    }
+    //activate card reader
+    activateCardReader();
 
     setPagePaymentInformation(setStepClaimOrganization);
     setupSettingsPage();
     determinStartPage();
+
+
 }
-
-
 //bind to our indexpage so that we can set it up every tiem we go there
-$(document).bind("pagechange", function (e, data) {
+$(document).bind( "pagechange", function( e, data ) { 
 
-    if (data.options.target == "#indexpage") {
+    if ( data.options.target == "#indexpage" ) {
 
         setupSettingsPage();
     }
-    if (data.options.target == "#setstartscreenpage") {
+    if ( data.options.target == "#setstartscreenpage" ) {
 
 
         setupStartScreenPage();
@@ -97,13 +52,16 @@ $(document).bind("pagechange", function (e, data) {
 function determinStartPage()
 {
     window.sessionStorage.setItem('already_initialSetup', true);
+
+
     //var hideIntro = 'true';//storageGet('hideintro');
     var hideIntro = storageGet('hideintro');
+
     //var alreadyshowedintro = window.sessionStorage.getItem('alreadyshowedintro');
 
 
 
-    if ((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
+    if((hideIntro && hideIntro == 'true'))// || (alreadyshowedintro && alreadyshowedintro == 'true'))
     {
 
         //based on the settings they chose, open the correct screen
@@ -113,15 +71,17 @@ function determinStartPage()
         var pageid = getPageID();
         var displayname = getDisplayName();
         //if it is not apple safe, just leave them at the settings page
-        if ((!(isSearchSet())) || !(getAppleSafe()))
+        if((!(isSearchSet())) || !(getAppleSafe()))
         {
             return true; //just leave them on the settings screen
-        } else
+        }
+        else
         {
 
             //determine what they set as the opeing page
             var startpageselection = storageGet('startpageselection');
-            switch (startpageselection)
+
+            switch(startpageselection)
             {
                 case 'donationpage':
                     openDonationPage('');
@@ -139,21 +99,24 @@ function determinStartPage()
 
         }
 
-    } else
+    }
+    else
     {
 
         //set the session storage that it showed the intro
         //window.sessionStorage.setItem("alreadyshowedintro", "true");
-        $.mobile.loading('show', {
+        $.mobile.loading( 'show', {
             text: 'Loading Intro',
             textVisible: true,
             theme: 'a',
             html: ""
         });
-        setTimeout(function () {
-            $.mobile.loading().hide();
+        setTimeout( function() { $.mobile.loading().hide();
             loadMoreInfo('');
-        }, 1000);
+
+            }, 1000 );
+
+
     }
 
 
@@ -165,41 +128,55 @@ function setapplesafe()
 
     var applesafeversion = storageGet('applesafeversion');
     var applesafestorage = storageGet('applesafestorage');
+
     //only check if ipad and and store
 
 
     var isapple = isApple();
+
     //if it is false, we need to check in case it changed
     //if the two app versions don't match up we need to check
     //if its true and the 2 app version match, we don't need to check	
 
-    if (true || ((isapple && (_kiosklicense == 'store'))) && (!(applesafestorage == 'true') || !(applesafeversion == _kioskversion)))
+    if(true || ((isapple && (_kiosklicense == 'store')) ) && ( !(applesafestorage == 'true') || !(applesafeversion == _kioskversion) ))
     {
         //if it came in here, we set the flow to false until we know otherwise
         storageSet('applesafestorage', 'false');
+
         //then we need to check the version
-        var urltocall = _baseURL + _appCheckURL + "?kioskversion=" + _kioskversion;
+        var urltocall = _baseURL + _appCheckURL + "?kioskversion="+_kioskversion;
+
         $.ajax({
             url: urltocall,
             async: false,
-            success: function (data) {
+            success:function(data){
 
-                var result = (data == 'true') ? 'true' : 'false';
+                var result = (data =='true' )?'true':'false';
+
+
                 storageSet('applesafeversion', _kioskversion);
                 storageSet('applesafestorage', result);
+
+
             }
             ,
-            fail: function (data) {
+            fail:function(data){
 
 
                 storageSet('applesafeversion', _kioskversion);
                 storageSet('applesafestorage', 'false');
+
+
+
             }
         });
-    } else
+
+    }
+    else
     {
 
         storageSet('applesafestorage', 'true');
+
     }
 
 
@@ -211,51 +188,57 @@ function getAppleSafe()
     //only check if apple, otherwise its true
 
     var isapple = isApple();
-    if (isapple && (_kiosklicense == 'store'))
+
+    if(isapple && (_kiosklicense == 'store'))
     {
-        result = (storageGet('applesafestorage') == 'true') ? true : false;
+        result = (storageGet('applesafestorage') == 'true')?true:false;
     }
 
     return result;
 }
-function iabLoadStart(event) {
+function iabLoadStart(event) { 
     //alert(event.type + ' - ' + event.url);
 }
 
-function iabLoadStartSearch(event) {
+function iabLoadStartSearch(event) { 
 
     cururl = event.url;
     //alert("iabLoadStartSearch");
-    if (cururl.indexOf("?displayname") != -1)
+    if(cururl.indexOf("?displayname") != -1)
     {
 
-        storeURLInfo(cururl);
-        storageSet('step-search', 'true');
+        storeURLInfo(cururl);		
+        storageSet('step-search','true');	
         browserwindow.removeEventListener('exit', iabCloseSearch);
         //remove the page data from storage
         window.sessionStorage.removeItem('pagedata');
         setPagePaymentInformation(null);
         ajaxCallKioskSetup();
+
         //determin what step to send the user to.  eiteher settings page or screen selection page
-        if (isStartScreenSet())
+        if(isStartScreenSet())
         {
             showMessage("Now that your page is set, you can put your kiosk into donation or point of sale mode from this settings screen ", '', " ", "OK");
             loadSettingsPage();
-        } else
+
+        }
+        else
         {
             openSetStartScreenPage();
-        }
+
+
+        }		
 
         //close the search window
         browserwindow.close();
     }
 }
 
-function iabLoadStopDonation(event) {
+function iabLoadStopDonation(event) { 
 
     cururl = event.url;
     //alert("iabLoadStopDonation");
-    if (cururl.indexOf("donation_prompt") != -1)
+    if(cururl.indexOf("donation_prompt") != -1)
     {
         //activate card reader
         //activateCardReader();
@@ -266,15 +249,17 @@ function iabLoadStopDonation(event) {
 
     }
 }
-function iabLoadStartDonation(event) {
+function iabLoadStartDonation(event) { 
 
     cururl = event.url;
     //alert("iabLoadStartDonation");
-    if (cururl.indexOf("kiosksettings") != -1)
+    if(cururl.indexOf("kiosksettings") != -1)
     {
 
 
-        browserwindow.close();
+        browserwindow.close();		
+
+
     }
 }
 
@@ -282,7 +267,7 @@ function iabLoadStop(event) {
 
 }
 
-function iabCloseSearch(event) {
+function iabCloseSearch(event) {	
     //alert("iabCloseSearch");
 
     browserwindow.removeEventListener('loadstart', iabLoadStartSearch);
@@ -297,7 +282,7 @@ function iabCloseSearch(event) {
 function iabCloseDonation(event, extras) {
 
     //alert("iabCloseDonation");
-    showUnlockKioskPage();
+    showUnlockKioskPage();	 
     browserwindow.removeEventListener('loadstop', iabLoadStop);
     browserwindow.removeEventListener('exit', iabCloseDonation);
     //browserwindow = window.open('index.html', '_self', 'location=yes');	//donation windows should already be at the index any ways
@@ -311,26 +296,30 @@ function openSearch()
     storageSet('securecancelpath', 'index');
     //determin if they should go to the secure kiosk or the unlock kiosk page
 
-    if (!isPinSet())
+    if(!isPinSet())
     {
         showSecureKioskPage();
-    } else
+    }
+    else
     {
 
         showUnlockKioskPage();
+
     }
 }
 function openSearchPage()
-{
+{	
     //alert("openSearchPage");
     browserwindow = window.open(_kioskURL + _searchPage, '_blank', 'location=no,closebuttoncaption=settings');
+
     browserwindow.addEventListener('loadstart', iabLoadStartSearch);
     //browserwindow.addEventListener('loadstop', iabLoadStartSearch);
     browserwindow.addEventListener('exit', iabCloseSearch);
+
 }
 function openSignupPage()
 {
-    var target = (getAppleSafe()) ? '_blank' : '_system';
+    var target = (getAppleSafe())?'_blank':'_system';
     browserwindow = window.open(_kioskURL + _signUpPage, target, 'location=no,closebuttoncaption=settings');
     //browserwindow.addEventListener('exit', iabClose);
 
@@ -343,34 +332,40 @@ function getParameterByName(name, url) {
 function openDonationPage(extras)
 {
 
-    if (isSearchSet())
+    if(isSearchSet())
     {
         storageSet('securesuccesspath', 'index');
         storageSet('securecancelpath', 'donation');
+
         storageSet('lastopendonationpageextras', extras);
         var pageid = getPageID();
-        var url = _kioskURL + pageid + extras;
+        var url =_kioskURL + pageid + extras;
+
         //determin if this page should be open in app or not
         //for store ios open in blank
 
-        if (getAppleSafe())
+        if(getAppleSafe())
         {
 
-            browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');
+            browserwindow = window.open(url, '_blank', 'toolbar=no,location=no');	
             browserwindow.addEventListener('exit', iabCloseDonation);
             browserwindow.addEventListener('loadstop', iabLoadStopDonation);
             browserwindow.addEventListener('loadstart', iabLoadStartDonation);
-        } else
-        {
+        }
+        else
+        {	
 
             browserwindow = window.open(url, '_system', 'toolbar=no,location=no');
         }
 
 
 
-    } else
+    }
+    else
     {
         showMessage("Please set the kiosk to your church, organization, or fundraiser in step 2 below. ", '', " ", "OK");
+
+
     }
 
 
@@ -383,14 +378,15 @@ function storageGet(key, defaultval)
 {
 
     //if((!window.localStorage.getItem(key) || /^\s*$/.test(window.localStorage.getItem(key))))
-    if (typeof window.localStorage.getItem(key) === 'undefined')
+    if(typeof window.localStorage.getItem(key) === 'undefined' )
     {
 
-        if ((!defaultval))
+        if((!defaultval ))
         {
 
             return null;
-        } else
+        }
+        else
         {
             return defaultval
         }
@@ -431,6 +427,7 @@ function storeURLInfo(fullURL)
     var pageid = findPageID(fullURL);
     //get displayname
     var displayname = getParameterByName("displayname", fullURL);
+
     //save these
     storePageID(pageid);
     storeDisplayName(displayname);
@@ -442,23 +439,30 @@ function setupSettingsPage()
     setStepPin();
     setStepSearch();
     setStepStartScreen();
+
     setStepStartRecivingDonations();
     setHelpfullLinks();
     setStepClaimOrganization();
     setDeviceSpecificClasses();
+
+
+
+
 }
 function setStepPin()
 {
     //if a pin has been setup, then set this task to completed
 
-    if (isPinSet())
+    if(isPinSet())
     {
 
         $('.step-pin-outer').addClass('completed');
-    } else
+    }
+    else
     {
 
         $('.step-pin-outer').removeClass('completed');
+
     }
 
 }
@@ -466,49 +470,57 @@ function setStepSearch()
 {
 
 
-    if (isSearchSet())
+    if(isSearchSet())
     {
         $('.step-search-outer').addClass('completed');
-    } else
+    }
+    else
     {
 
         $('.step-search-outer').removeClass('completed');
+
     }
 }
 function setStepStartScreen()
 {
 
-    if (isStartScreenSet())
+    if(isStartScreenSet())
     {
         $('.step-startscreen-outer').addClass('completed');
-    } else
+    }
+    else
     {
 
         $('.step-startscreen-outer').removeClass('completed');
+
     }
 }
 function setStepStartRecivingDonations()
 {
 
-    if (isStartRecivingDonationsSet())
+    if(isStartRecivingDonationsSet())
     {
         $('.step-recievedonations-outer').addClass('completed');
-    } else
+    }
+    else
     {
 
         $('.step-recievedonations-outer').removeClass('completed');
+
     }
 }
 function setStepClaimOrganization()
 {
 
-    if (isFundraisingPageClaimed())
+    if(isFundraisingPageClaimed())
     {
         $('.step-claimorganization-outer').hide();
-    } else
+    }
+    else
     {
-        if (getAppleSafe())
+        if(getAppleSafe())
             $('.step-claimorganization-outer').show();
+
     }
 
 
@@ -516,53 +528,63 @@ function setStepClaimOrganization()
 function setDeviceSpecificClasses()
 {
 
-    if (isApple())
+    if(isApple())
     {
         $('.appleonly').show();
-    } else
+    }
+    else
     {
 
         $('.appleonly').hide();
+
     }
-    if (getAppleSafe())
+    if(getAppleSafe())
     {
 
         $('.applestoresafe').show();
-    } else
+    }
+    else
     {
 
         $('.applestoresafe').hide();
+
     }
 }
 function setHelpfullLinks()
 {
     //if the search is set, we can show these
-    if (isSearchSet() || true)
+    if(isSearchSet() || true)
     {
         $('#helpfullinks').show();
-    } else
+    }
+    else
     {
 
         $('#helpfullinks').hide();
+
     }
 }
 function isApple()
 {
 
-    var devicetype = device.platform;
+    var devicetype = device.platform;	
     var result = ((devicetype.toLowerCase().indexOf("iphone") >= 0) || (devicetype.toLowerCase().indexOf("ipad") >= 0) || (devicetype.toLowerCase().indexOf("ipod") >= 0) || (devicetype.toLowerCase().indexOf("ios") >= 0));
+
     return result
 }
 function setupKioskOrganizationDisplayName()
 {
 
     //var infoField = document.getElementById("kioskOrganizationDisplayName");
-    if (isSearchSet())
+    if(isSearchSet())
     {
         var displayname = getDisplayName();
+
         //infoField.innerHTML = "Kiosk is set to: "+ displayname;
-        $("#kioskOrganizationDisplayName").html("Kiosk is set to: " + displayname);
-    } else
+        $("#kioskOrganizationDisplayName").html("Kiosk is set to: "+ displayname);
+
+    }
+    else
     {
         $("#kioskOrganizationDisplayName").html("");
         //infoField.innerHTML = "";
@@ -586,17 +608,20 @@ function showUnlockKioskPage()
     //but if they unlock it with the correct pin, then the state will go to unlocked, and the cancel option will not happen
     storageSet('unlockkioskcurrentstate', 'locked');
     storageSet('securecanceltime', $.now());
-    setTimeout(function () {
-        cancelUnlockKioskIfStateIsCorrect(); // Do something after 10 seconds
-    }, 10000);
+    setTimeout(function() {
+        cancelUnlockKioskIfStateIsCorrect();// Do something after 10 seconds
+        }, 10000);
+
+
     $(':mobile-pagecontainer').pagecontainer('change', '#unlockkioskpage', {
         transition: 'pop',
         changeHash: false,
         reverse: false,
         showLoadMsg: true,
         role: "dialog",
+
     });
-    if (environment != 'prod')
+    if(environment != 'prod')
     {
         $('#unlockpin').val('123');
     }
@@ -613,38 +638,42 @@ function showSecureKioskPage()
         showLoadMsg: true,
         role: "dialog"
     });
+
     //first decide if they have already locked hteir kiosk or not.
     //if they have, then they are going to edit this page.
     //we will hide and show different buttons and pin number
     $('#securepin').val('');
     $('#secureconfirmpin').val('');
-    if (isPinSet())
+    if(isPinSet())
     {
         //then they edit what they have
         $('#editpinpin').show();
         $('#editpintext').show();
         $('#createpintext').hide();
-        $('#securepin').attr("placeholder", "New Pin - Required");
-        $('#secureconfirmpin').attr("placeholder", "Confirm New Pin - Required");
-    } else
+        $('#securepin').attr("placeholder","New Pin - Required");
+        $('#secureconfirmpin').attr("placeholder","Confirm New Pin - Required");
+
+    }
+    else
     {
         $('#editpinpin').hide();
         $('#editpintext').hide();
         $('#createpintext').show();
-        $('#securepin').attr("placeholder", "Pin - Required");
-        $('#secureconfirmpin').attr("placeholder", "Confirm Pin - Required");
+        $('#securepin').attr("placeholder","Pin - Required");
+        $('#secureconfirmpin').attr("placeholder","Confirm Pin - Required");
+
     }
     //set
 
     $('#email').val(storageGet('email'));
-    $('#name').val(storageGet('name'));
+    $('#name').val(storageGet('name'));	
     $('#phonenumber').val(storageGet('phonenumber'));
-    if (storageGet('represents'))
+    if(storageGet('represents'))
     {
         $('#represents').val(storageGet('represents')).attr("selected", "selected").change();
     }
     //dev stuff to make preset this stuff
-    if (environment != 'prod')
+    if(environment != 'prod')
     {
         $('#currentpin').val('123');
         $('#securepin').val('123');
@@ -657,16 +686,16 @@ function showSecureKioskPage()
     //window.location = "securekiosk.html";
 }
 /*
- function saveStartPageRadioButtonValue()
- {
- alert('in save');
- var startpageselection = $('input[name=startpagegroup]:checked').val();
- //alert(startpageselection);
- storageSet('startpageselection', startpageselection);
- 
- }
- */
-function setupStartScreenPage()
+function saveStartPageRadioButtonValue()
+{
+alert('in save');
+var startpageselection = $('input[name=startpagegroup]:checked').val();
+//alert(startpageselection);
+storageSet('startpageselection', startpageselection);
+
+}
+*/
+function setupStartScreenPage() 
 {
 
     setDeviceSpecificClasses();
@@ -688,30 +717,39 @@ function loadSettingsPage()
 function loadMoreInfo(pagetype)
 {
     storageSet('hideintro', true);
+
+
+
     var url = _kioskURL + _KioskIntroURL;
+
     browserwindow = window.open(url, '_blank', 'location=no,closebuttoncaption=Get Started,toolbarposition=top');
+
     browserwindow.addEventListener('loadstart', iabLoadStartDonation);
+
+
 }
 
 function loadContactRequest()
 {
     var url = _kioskURL + _contactRequestURL;
     browserwindow = window.open(url, '_blank', 'location=no');
+
 }
 function loadPurchasePage()
 {
     var url = _purchasePageURL;
-    var target = (getAppleSafe()) ? '_blank' : '_system';
+    var target = (getAppleSafe())?'_blank':'_system';
     browserwindow = window.open(url, target, 'location=no');
 }
 function loadLearnMorePage()
 {
-    var target = (getAppleSafe()) ? '_blank' : '_system';
+    var target = (getAppleSafe())?'_blank':'_system';
     browserwindow = window.open(_baseURL, target, 'location=no');
 }
 function loadLockKioskHelp()
 {
     var url = _kioskURL + _lockKioskHelpURL;
+
     browserwindow = window.open(url, '_blank', 'location=no');
 }
 function openSetStartScreenPage()
@@ -723,22 +761,25 @@ function openSetStartScreenPage()
         showLoadMsg: true,
         role: "dialog"
     });
+
     //set up the radio buttons for start page
-    var startpageselection = storageGet('startpageselection');
-    var nametoset = "radiostartpagegroup" + startpageselection;
-    $("#" + nametoset).prop("checked", true);
+    var startpageselection = storageGet('startpageselection');	
+    var nametoset = "radiostartpagegroup"+startpageselection;
+    $("#"+nametoset).prop("checked", true);
     $("input[type='radio']").checkboxradio("refresh");
 }
 
 function closeSetStartScreenPage()
-{
+{	
     var startpageselection = $('input[name=startpagegroup]:checked').val();
     //alert(startpageselection);
     storageSet('startpageselection', startpageselection);
-    if (isStartRecivingDonationsSet())
+
+    if(isStartRecivingDonationsSet())
     {
         loadSettingsPage();
-    } else
+    }
+    else
     {
         openStartRecivingDonationsPage();
     }
@@ -746,7 +787,7 @@ function closeSetStartScreenPage()
 }
 function openStartRecivingDonationsPage()
 {
-    storageSet('step-recievedonations', 'true');
+    storageSet('step-recievedonations','true');
     $(':mobile-pagecontainer').pagecontainer('change', '#startreceivingdonationspage', {
         transition: 'pop',
         changeHash: false,
@@ -755,14 +796,19 @@ function openStartRecivingDonationsPage()
         role: "page"
     });
     var pageinfo = getPagePaymentInformation();
-    if (!pageinfo.userid || pageinfo.userid == 'null')
+    if(!pageinfo.userid || pageinfo.userid == 'null')
     {
         var displayname = getDisplayName();
-        var address = displayname + "</br>" + ((pageinfo.address) ? pageinfo.address : " ") + "</br>" + ((pageinfo.city) ? pageinfo.city : " ") + " " + pageinfo.state + " " + ((pageinfo.zip) ? pageinfo.zip : " ");
+
+        var address = displayname +"</br>"+ ((pageinfo.address) ? pageinfo.address : " ")+"</br>"+ ((pageinfo.city) ? pageinfo.city : " ")+" "+ pageinfo.state+" "+ ((pageinfo.zip) ? pageinfo.zip : " ");	
+
         $("#organizationinfo").html(address);
+
+
         $('#startrecievingdonationsunclaimeddiv').show();
         $('#startrecievingdonationsclaimeddiv').hide();
-    } else
+    }
+    else
     {
 
         $('#startrecievingdonationsunclaimeddiv').hide();
@@ -780,13 +826,15 @@ function clearDataForTesting()
 
     window.localStorage.clear();
     loadSettingsPage();
+
+
 }
 function showMessageCallBack()
 {
 
     return true;
 }
-function showMessage(message, callback, title, buttonName) {
+function showMessage(message, callback, title, buttonName){
 
     //alert(message);
     //return true;
@@ -795,15 +843,17 @@ function showMessage(message, callback, title, buttonName) {
     buttonName = buttonName || 'OK';
     callback = callback || showMessageCallBack;
     // removing this for now since it does  not work
-    if (navigator.notification && navigator.notification.alert && false) {
+    if(navigator.notification && navigator.notification.alert && false){
 
         navigator.notification.alert(
-                message, // message
-                showMessageCallBack, // callback
-                title, // title
-                buttonName                  // buttonName
-                );
-    } else {
+            message,  // message
+            showMessageCallBack,         // callback
+            title,            // title
+            buttonName                  // buttonName
+        );
+
+
+    }else{
 
         alert(message);
         callback();
@@ -817,77 +867,96 @@ function showConfirmCallBack(buttonnumber)
     return true;
 }
 
-function showConfirm(message, callback, title, exitName, confirmName) {
+function showConfirm(message, callback, title, exitName, confirmName){
 
     title = title || "Please Confirm";
     confirmName = confirmName || 'OK';
     exitName = exitName || 'Exit';
     callback = callback || showConfirmTrueCallBack;
-    if (navigator.notification && navigator.notification.confirm) {
+
+    if(navigator.notification && navigator.notification.confirm){
 
 
         navigator.notification.confirm(
-                message, // message
-                callback, // callback
-                title, // title
-                [exitName, confirmName]                  // buttonName
-                );
-    } else {
+            message,  // message
+            callback,         // callback
+            title,            // title
+            [exitName,confirmName]                  // buttonName
+        );
+
+
+    }else{
 
 
         var r = confirm(message);
         callback(r);
+
+
     }
     return true;
+
 }
 
 function isPinSet()
 {
     var pin = storageGet(_storagePin);
     var email = storageGet('email');
-    if ((!pin || /^\s*$/.test(pin)) || (!email || /^\s*$/.test(email)))
+    if((!pin || /^\s*$/.test(pin)) || (!email || /^\s*$/.test(email)))
     {
         return false;
-    } else
+
+    }
+    else
     {
         return true;
+
+
     }
 }
 function isSearchSet()
 {
     var pageid = getPageID();
     var displayname = getDisplayName();
-    if ((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
+    if((!pageid || /^\s*$/.test(pageid)) || (!displayname || /^\s*$/.test(displayname)))
     {
         return false;
-    } else
+    }
+    else
     {
 
         return true;
+
     }
 }
 function isStartScreenSet()
 {
-    var startpageselection = storageGet('startpageselection');
-    if ((!startpageselection || /^\s*$/.test(startpageselection)))
+    var startpageselection = storageGet('startpageselection');	
+
+    if((!startpageselection || /^\s*$/.test(startpageselection)) )
     {
         return false;
-    } else
+
+    }
+    else
     {
 
         return true;
+
     }
 }
 function isStartRecivingDonationsSet()
-{
-    var steprecievedonations = storageGet('step-recievedonations');
-    if ((!steprecievedonations || /^\s*$/.test(steprecievedonations)))
+{	
+    var steprecievedonations = storageGet('step-recievedonations');	
+
+    if((!steprecievedonations || /^\s*$/.test(steprecievedonations)) )
     {
         return false;
-    } else
+    }
+    else
     {
 
         return true;
+
     }
 
 }
@@ -896,25 +965,30 @@ function isFundraisingPageClaimed()
     //do an ajax call to c2g and see if the page is claimed. 
     var returnval = true;
     var pageid = getPageID();
-    if (!pageid)
+
+    if(!pageid)
     {
 
         //return true since they have not page selected to claim
         returnval = true;
-    } else
+    }
+    else
     {
 
         var pageinfo = getPagePaymentInformation();
-        jQuery.type(pageinfo);
-        if (jQuery.type(pageinfo) == 'object' && (!pageinfo.userid || pageinfo.userid == 'null'))
+
+
+        jQuery.type( pageinfo );
+        if(jQuery.type( pageinfo ) == 'object' && (!pageinfo.userid || pageinfo.userid == 'null'))
         {
 
             returnval = false;
-        } else
+        }
+        else
         {
 
             returnval = true;
-        }
+        }	
 
 
     }
@@ -924,44 +998,49 @@ function setPagePaymentInformation(callback)
 {
 
     var pageid = getPageID();
-    if (!pageid)
-    {
+    if(!pageid)
+    {	
 
-        window.sessionStorage.setItem('pagedata', '');
-        if (callback)
+        window.sessionStorage.setItem('pagedata','' );
+        if(callback)
         {
             callback();
         }
 
-    } else
-    {
+    }
+    else
+    { 
 
         var urlstring = pageid;
+
         var urltocall = _baseURL + _getPageInformationURL + urlstring;
         $.ajax({
             url: urltocall,
-            success: function (data) {
+            success:function(data){
 
-                var obj = jQuery.parseJSON(data);
-                window.sessionStorage.setItem('pagedata', data);
-                if (callback)
+                var obj = jQuery.parseJSON(data );
+
+                window.sessionStorage.setItem('pagedata',data);
+                if(callback)
                 {
                     callback();
                 }
 
             }
             ,
-            fail: function (data) {
+            fail:function(data){
 
-                var obj = jQuery.parseJSON(data);
-                window.sessionStorage.setItem('pagedata', '');
-                if (callback)
+                var obj = jQuery.parseJSON(data );
+
+                window.sessionStorage.setItem('pagedata','' );
+                if(callback)
                 {
                     callback();
                 }
 
             }
         });
+
     }
 
 }
@@ -969,28 +1048,32 @@ function getPagePaymentInformation()
 {
 
     var pagedata = window.sessionStorage.getItem('pagedata');
-    var obj = jQuery.parseJSON(pagedata);
+
+    var obj = jQuery.parseJSON(pagedata );
+
     return obj;
+
 }
 function isValidEmailAddress(emailAddress) {
     var pattern = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
     return pattern.test(emailAddress);
-}
-;
+};
 function ajaxCallKioskSetup()
 {
 
     var pageid = getPageID();
-    if ((!pageid || /^\s*$/.test(pageid)))
+
+    if((!pageid || /^\s*$/.test(pageid)))
     {
 
         pageid = '';
     }
-    var urlstring = "&name=" + encodeURIComponent(storageGet('name')) + "&email=" + encodeURIComponent(storageGet('email')) + "&phonenumber=" + encodeURIComponent(storageGet('phonenumber')) + "&represents=" + storageGet('represents') + "&kiosktype=" + _kiosklicense + "&kiosksetpageid=" + pageid + "&kioskplatform=" + encodeURIComponent(window.device.model) + "&kioskversion=" + encodeURIComponent(_kioskversion);
-    var urltocall = _baseURL + _kiosksetupURL + urlstring;
+    var urlstring = "&name="+encodeURIComponent(storageGet('name'))+"&email="+encodeURIComponent(storageGet('email'))+"&phonenumber="+encodeURIComponent(storageGet('phonenumber'))+"&represents="+storageGet('represents')+"&kiosktype="+_kiosklicense+"&kiosksetpageid="+pageid+"&kioskplatform="+encodeURIComponent(window.device.model)+"&kioskversion="+encodeURIComponent(_kioskversion);
+
+    var urltocall = _baseURL + _kiosksetupURL + urlstring; 
     // Assign handlers immediately after making the request,
     // and remember the jqxhr object for this request
-    var jqxhr = $.post(urltocall);
+    var jqxhr = $.post( urltocall);
 }
 
 
@@ -998,17 +1081,21 @@ function checkforenterpriseupdate()
 {
 
     //only check if it is the enterprise version
-    if (_kiosklicense == 'enterprise')
+    if(_kiosklicense == 'enterprise')
     {
         $.ajax({
-            url: _iosEnterpriseVersionAppCheckURL + "?kioskversion=" + _kioskversion,
-            success: function (data) {
+            url: _iosEnterpriseVersionAppCheckURL + "?kioskversion="+_kioskversion,
+            success:function(data){
 
-                var result = (data == 'true') ? 'true' : 'false';
-                if (result == 'true')
+                var result = (data =='true' )?'true':'false';
+
+
+                if(result == 'true')
                 {
-                    showConfirm("Please update your Offering Kiosk app by clicking Update", updateIOSEnterpriseApp, 'Update Available', "Not Now", "Update");
-                } else
+                    showConfirm("Please update your Offering Kiosk app by clicking Update", updateIOSEnterpriseApp, 'Update Available',"Not Now", "Update");
+
+                }
+                else
                 {
                     //no need to update
                 }
@@ -1016,7 +1103,7 @@ function checkforenterpriseupdate()
 
             }
             ,
-            fail: function (data) {
+            fail:function(data){
 
 
             }
@@ -1029,18 +1116,100 @@ function checkforenterpriseupdate()
 function updateIOSEnterpriseApp(result)
 {
 
-    if (result == 2 || result == 'true' || result === true)
+    if(result == 2 || result == 'true' || result === true)
     {
         //alert(_enterpriseDownloadURL);
         browserwindow = window.open(_enterpriseDownloadURL, '_blank', 'toolbar=no,location=no');
-    } else
+    }
+    else
     {
         //alert("false updateIOSEnterpriseApp");
 
     }
 
     return true;
+
+
 }
+
+/*
+
+Card reader stuff
+*/
+function activateCardReader()
+{
+    //onlyu call this if IOS for now
+
+    if(isApple() && getAppleSafe() )
+    {
+
+
+        cordova.plugins.unimag.swiper.activate(function(){
+            console.log("card reader activated");
+        }, function(e){
+            console.error(e);
+        });
+        
+        cordova.plugins.unimag.swiper.setReaderType('shuttle');
+        //alert(" before shuttle connected");
+
+        var swipe = function () {
+
+            if (connected) {
+
+                cordova.plugins.unimag.swiper.swipe(function successCallback () {
+                    //console.log('SUCCESS: Swipe started.'); 
+                    }, function errorCallback (e) {
+                        console.error(e);
+                        //console.log('ERROR: Could not start swipe.');
+                });
+            } 
+            else 
+            {
+                //console.log('ERROR: Reader is not connected.');
+            }
+        }
+
+        cordova.plugins.unimag.swiper.on('connected', function () {
+            console.log("connected");
+            connected = true;
+            swipe();
+
+        });
+
+        cordova.plugins.unimag.swiper.on('disconnected', function () {
+            connected = false;
+        });
+
+        cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
+            var data = JSON.parse(e.detail);
+            //console.log('cardholder name: ' + data.first_name + ' ' + data.last_name);
+            //console.log('card number:' + data.card_number);
+            //console.log('expiration:' + data.expiry_month + '/' + data.expiry_year);
+            startTaskSwipe(e);
+            swipe();
+        });
+
+        cordova.plugins.unimag.swiper.on('swipe_error', function () {
+            alert('ERROR: Sorry, Please try again.');
+            swipe();
+        });
+
+        cordova.plugins.unimag.swiper.on('timeout', function (e) {
+            if (connected) {
+                // console.log('ERROR: Swipe timed out - ' + e.detail);
+            } else {
+                //console.log('ERROR: Connection timed out - ' + e.detail);
+            }
+            swipe();
+        });
+
+
+
+    }
+
+}
+
 
 function startTaskSwipe(e)
 {
@@ -1055,10 +1224,10 @@ function startTaskSwipe(e)
 
 }
 
-function sendCardData(cardData, callback)
+function sendCardData(cardData)
 {
-    browserwindow.executeScript({code: "cardSwipeIdTeckbase64('" + (btoa(cardData)) + "');"});
-    callback();
+
+    browserwindow.executeScript({code: "cardSwipeIdTeckbase64('"+(btoa(cardData))+"');"});
 }
 
 function parseData(data)
@@ -1069,26 +1238,27 @@ function parseData(data)
     var start = false;
     var end = false;
     var cardNumber = '';
-    for (var i = 0; i < data.length; i++)
+    for (var i=0; i < data.length; i++)
     {
-        if (i > 1 && data.charAt(i - 1) == "B" && data.charAt(i - 2) == "%")
+        if(i > 1 && data.charAt(i -1) == "B" && data.charAt(i -2) == "%")
         {
             start = true;
         }
-        if (data.charAt(i) == "^")
+        if(data.charAt(i) == "^")
         {
             end = true;
         }
 
-        if (start && !end)
+        if(start && !end)
         {
-            cardNumber = cardNumber + data.charAt(i);
+            cardNumber = cardNumber+data.charAt(i);
         }
 
 
     }
 
-    firstfour = cardNumber.substring(0, 4);
+    firstfour = cardNumber.substring(0,4);
+
     lastfour = cardNumber.substring(cardNumber.length - 4, cardNumber.length);
     cardData.firstfour = firstfour;
     cardData.lastfour = lastfour;
@@ -1097,21 +1267,21 @@ function parseData(data)
     start = false;
     end = false;
     var cardname = '';
-    for (var i = 0; i < data.length; i++)
+    for (var i=0; i < data.length; i++)
     {
-        if (start && data.charAt(i) == "^")
+        if(start && data.charAt(i) == "^")
         {
             end = true;
         }
-        if (i > 1 && data.charAt(i - 1) == "^")
+        if(i > 1 && data.charAt(i -1) == "^")
         {
             start = true;
         }
 
 
-        if (start && !end)
+        if(start && !end)
         {
-            cardname = cardname + data.charAt(i);
+            cardname = cardname+data.charAt(i);
         }
 
 
@@ -1121,48 +1291,50 @@ function parseData(data)
     end = false;
     var expdate = '';
     //find experatondate
-    for (var i = 0; i < data.length; i++)
+    for (var i=0; i < data.length; i++)
     {
-        if (i > 1 && data.charAt(i - 1) == "=")
+        if(i > 1 && data.charAt(i -1) == "=" )
         {
             start = true;
         }
-        if (data.charAt(i - 5) == "=")
+        if(data.charAt(i-5) == "=")
         {
             end = true;
         }
 
-        if (start && !end)
+        if(start && !end)
         {
-            expdate = expdate + data.charAt(i);
+            expdate = expdate+data.charAt(i);
         }
 
 
     }
 
     cardData.expdate = expdate;
+
     //get tracks
     start = true;
     end = false;
     var track1 = '';
     var track2 = '';
     //find experatondate
-    for (var i = 0; i < data.length; i++)
+    for (var i=0; i < data.length; i++)
     {
-        if (i > 1 && data.charAt(i) == ";" && !end)
+        if(i > 1 && data.charAt(i) == ";" && !end )
         {
             end = true;
         }
 
 
-        if (start && !end)
+        if(start && !end)
         {
-            track1 = track1 + data.charAt(i);
+            track1 = track1+data.charAt(i);
         }
-        if (start && end)
+        if(start && end)
         {
-            track2 = track2 + data.charAt(i);
-            if (data.charAt(i) == "?")
+            track2 = track2+data.charAt(i);
+
+            if(data.charAt(i) == "?")
                 break;
         }
 
@@ -1174,26 +1346,27 @@ function parseData(data)
     cardData.panlength = cardNumber.length;
     cardData.kssn = cardNumber;
     /*
-     alert(firstfour);
-     alert(lastfour);
-     alert(cardname);
-     alert(expdate);
-     alert(cardData.track1);
-     alert(cardData.track2);
-     alert(cardData.panlength);
-     alert(cardData.kssn);
-     */
+    alert(firstfour);
+    alert(lastfour);
+    alert(cardname);
+    alert(expdate);
+    alert(cardData.track1);
+    alert(cardData.track2);
+    alert(cardData.panlength);
+    alert(cardData.kssn);
+    */
     //alert(data);
     return cardData;
+
 }
 
 //get base16 encoded string, given unsigned char (byte) array
 function getBase16(array) {
     var ret = [], a = array;
-    for (var i = 0; i < a.length; i++) {
+    for (var i=0; i<a.length; i++) {
         var hex = a[i].toString(16);
-        ret[i] = (hex.length == 1 ? "0" : "") + hex;
-        if (i % 4 == 3)
+        ret[i] = (hex.length==1?"0":"")+hex;
+        if (i%4==3)
             ret[i] += " ";
     }
     return ret.join("");
@@ -1201,9 +1374,9 @@ function getBase16(array) {
 //get ASCII string, with escape chars, from unsigned char (byte) array
 function getStrRepr(array) {
     var ret = [], a = array;
-    for (var i = 0; i < a.length; i++) {
+    for (var i=0; i<a.length; i++) {
 
-        if (a[i] == '\t'.charCodeAt(0)) {
+        if        (a[i] == '\t'.charCodeAt(0)) {
             ret[i] = "\\t";
         } else if (a[i] == '\n'.charCodeAt(0)) {
             ret[i] = "\\n";
@@ -1213,12 +1386,14 @@ function getStrRepr(array) {
             ret[i] = "\\\\";
             //printable
 
-        } else if (a[i] >= 0x20 && a[i] <= 0x7E) {
+        }
+
+        else if (a[i] >= 0x20 && a[i] <= 0x7E) {
             ret[i] = String.fromCharCode(a[i]);
             //use \hex for all others
         } else {
             var hex = a[i].toString(16);
-            ret[i] = "\\" + (hex.length == 1 ? "0" : "") + hex; // eg. 0xab => \ab instead of \xab
+            ret[i] = "\\"+(hex.length==1?"0":"")+hex; // eg. 0xab => \ab instead of \xab
         }
     }
     return ret.join("");
@@ -1239,39 +1414,41 @@ function secureKiosk()
     var pin = $('#securepin').val();
     var confirmpin = $('#secureconfirmpin').val();
     var email = $('#email').val();
-    var name = $('#name').val();
+    var name = $('#name').val();	
     var phonenumber = $('#phonenumber').val();
     var represents = $('#represents').val();
+
     //start doing validation
 
     var message = '';
-    if (isPinSet())
+    if(isPinSet())
     {
         //change the redirect flow since they came here with 
 
-        if (!(oldpinentered == pinstored))
+        if(!(oldpinentered == pinstored))
         {
-            message = message + "Incorrect Pin" + '\n';
+            message = message +"Incorrect Pin" + '\n';
         }
 
     }
 
     //make sure pin and confirm pin are the same
-    if (!pin || pin != confirmpin)
+    if(!pin || pin != confirmpin)
     {
-        message = message + " Pin and Confirm Pin must match." + '\n';
+        message = message +" Pin and Confirm Pin must match." + '\n' ;
     }
-    if (!(email)) {
-        message = message + " Email is required." + '\n';
+    if(!(email)){
+        message = message +" Email is required." + '\n' ;
     }
-    if (!isValidEmailAddress(email)) {
-        message = message + " Email must be a valid email." + '\n';
+    if(!isValidEmailAddress(email)){
+        message = message +" Email must be a valid email." + '\n' ;
     }
 
-    if (message != '')
+    if(message != '')
     {
         showMessage(message, '', " ", "OK");
-    } else
+    }
+    else
     {
         //store this stuff locally
         storageSet(_storagePin, pin);
@@ -1279,16 +1456,19 @@ function secureKiosk()
         storageSet('name', name);
         storageSet('phonenumber', phonenumber);
         storageSet('represents', represents);
-        $.mobile.loading('show', {
+
+        $.mobile.loading( 'show', {
             text: 'Securing Kiosk',
             textVisible: true,
             theme: 'a',
             html: ""
         });
-        ajaxCallKioskSetup();
+
+        ajaxCallKioskSetup();		
+
         //make sure we send them on the correct path.
         //if they have already set their search and this is an edit, then just send them to the edit screen
-        if (isSearchSet())
+        if(isSearchSet())
         {
             showMessage("Your Pin changes have been saved.", '', " ", "OK");
             $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
@@ -1297,10 +1477,12 @@ function secureKiosk()
                 reverse: true,
                 showLoadMsg: true
             });
-        } else
+        }
+        else
         {
             showMessage("Your kiosk has been secured.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
             openSearchPage();
+
         }
 
     }
@@ -1313,34 +1495,38 @@ function unlockKiosk()
 
     //get the pin they entered.  If it is correct, let them go to either search or settings (index) depending on success path
     var successPath = storageGet('securesuccesspath');
+
     var pintyped = $('#unlockpin').val();
     var pinstored = storageGet('pin');
-    if (pintyped == pinstored)
+
+    if(pintyped == pinstored)
     {
         //reset the screen to nothing
         $('#unlockpin').val('');
         //set the unlock state to unlocked so that our timer doesn't do a cancel
         storageSet('unlockkioskcurrentstate', 'unlocked');
-        if (successPath == 'search')
+        if(successPath == 'search')
         {
             showMessage("Your kiosk has been unlocked.  You can now search for the church, organization, or fundraiser you are setting your kiosk to.", '', " ", "OK");
             openSearchPage();
-        } else
+        }
+        else
         {
             loadSettingsPage()
             /*
-             
-             $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-             transition: 'pop',
-             changeHash: false,
-             reverse: false,
-             showLoadMsg: true
-             });
-             */
+
+            $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+            transition: 'pop',
+            changeHash: false,
+            reverse: false,
+            showLoadMsg: true
+            });
+            */
             //$.mobile.changePage('#indexkpage','slide');
             //browserwindow = window.open('index.html', '_self', 'location=yes');
         }
-    } else
+    }
+    else
     {
         showMessage("Incorrect Pin, please try again.", '', " ", "OK");
         //alert("Sorry, but this is not the correct pin");
@@ -1357,10 +1543,12 @@ function fogotPin()
     //they have saved.  Then let them know we sent the pin.
     var pin = storageGet('pin');
     var email = storageGet('email');
-    var urlstring = "&pin=" + pin + "&email=" + email;
-    var urltocall = _baseURL + _forgotPinURL + urlstring;
-    var jqxhr = $.post(urltocall);
-    showMessage("We have sent your pin to " + email, '', " ", "OK");
+
+    var urlstring = "&pin="+pin+"&email="+email;
+
+    var urltocall = _baseURL + _forgotPinURL + urlstring;	
+    var jqxhr = $.post( urltocall);
+    showMessage("We have sent your pin to "+email, '', " ", "OK");
     //alert("We have sent your pin to "+email);
 
 
@@ -1371,14 +1559,15 @@ function cancelUnlockKioskIfStateIsCorrect()
     //see if the last time we opened the unlock screen was 5 seconds or not, otherwise it hits this multple times if they fail and reopen
     var curtime = $.now();
     setTime = storageGet('securecanceltime', $.now());
-    if (curtime - setTime > 9900)
+    if(curtime - setTime > 9900)
     {
         //check to see what the unlock state is to know if we need to redirect to the whatever the cancel button does.
         var unlockkioskcurrentstate = storageGet('unlockkioskcurrentstate');
-        if (unlockkioskcurrentstate == 'unlocked')
+        if(unlockkioskcurrentstate == 'unlocked')
         {
             return true; //basically do nothing because they already entered the correct pin
-        } else
+        }
+        else
         {
             cancelUnlockKiosk();
         }
@@ -1391,22 +1580,24 @@ function cancelUnlockKiosk()
     //reset the screen to nothing
     $('#unlockpin').val('');
     var securecancelpath = storageGet('securecancelpath');
-    if (securecancelpath == 'index')
+    if(securecancelpath == 'index')
     {
         loadSettingsPage();
         /*
-         $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
-         transition: 'pop',
-         changeHash: false,
-         reverse: true,
-         showLoadMsg: true
-         });
-         */
+        $(':mobile-pagecontainer').pagecontainer('change', '#indexpage', {
+        transition: 'pop',
+        changeHash: false,
+        reverse: true,
+        showLoadMsg: true
+        });
+        */
         //browserwindow = window.open('index.html', '_self', 'location=yes');
-    } else
+    }
+    else
     {
 
-        openDonationPage(storageGet('lastopendonationpageextras', ''));
+        openDonationPage(storageGet('lastopendonationpageextras',''));
     }
 }
 /* ------ end unlock kiosk -----*/
+
