@@ -23,7 +23,6 @@ function onDeviceReady() {
 
     //see if they need a new update
     connected = false;
-    //checkforenterpriseupdate() 
 
     setapplesafe();
 
@@ -1077,61 +1076,6 @@ function ajaxCallKioskSetup()
 }
 
 
-function checkforenterpriseupdate()
-{
-
-    //only check if it is the enterprise version
-    if(_kiosklicense == 'enterprise')
-    {
-        $.ajax({
-            url: _iosEnterpriseVersionAppCheckURL + "?kioskversion="+_kioskversion,
-            success:function(data){
-
-                var result = (data =='true' )?'true':'false';
-
-
-                if(result == 'true')
-                {
-                    showConfirm("Please update your Offering Kiosk app by clicking Update", updateIOSEnterpriseApp, 'Update Available',"Not Now", "Update");
-
-                }
-                else
-                {
-                    //no need to update
-                }
-
-
-            }
-            ,
-            fail:function(data){
-
-
-            }
-        });
-    }
-
-
-
-}
-function updateIOSEnterpriseApp(result)
-{
-
-    if(result == 2 || result == 'true' || result === true)
-    {
-        //alert(_enterpriseDownloadURL);
-        browserwindow = window.open(_enterpriseDownloadURL, '_blank', 'toolbar=no,location=no');
-    }
-    else
-    {
-        //alert("false updateIOSEnterpriseApp");
-
-    }
-
-    return true;
-
-
-}
-
 /*
 
 Card reader stuff
@@ -1150,7 +1094,7 @@ function activateCardReader()
             console.error(e);
         });
         
-        cordova.plugins.unimag.swiper.setReaderType('shuttle');
+        //cordova.plugins.unimag.swiper.setReaderType('shuttle');
         //alert(" before shuttle connected");
 
         var swipe = function () {
