@@ -12,7 +12,7 @@
         <!--
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file: data:; style-src 'self' 'unsafe-inline' *; font-src 'self' * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
 
         <!-- Good default declaration:
         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
@@ -40,7 +40,8 @@
 		
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
-        <script type="text/javascript" src="js/unimag-swiper.js"></script>
+		<!-- IC 4/16/2020 this should be included automatically via cordova -->
+        <!-- <script type="text/javascript" src="js/unimag-swiper.js"></script> -->
 		
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 		
@@ -75,7 +76,7 @@
 					<div id='kioskOrganizationDisplayName' style='text-align:center;'>
 							
 					</div>
-					<div class='hidden-sm-down' >
+					<div class='d-none d-md-block' >
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
@@ -170,7 +171,7 @@
 						<div class='spacer'></div><div class='spacer'></div>
 						
 					</div>
-					<div class='hidden-md-up' >
+					<div class='d-md-none' >
 						<div class='step-pin-outer' onclick ="javascript:showSecureKioskPage();">
 							<div class ='step-outer'>
 								
@@ -273,7 +274,7 @@
 								Helpful Links
 							</p>
 						</div>
-						<div class='hidden-md-up' >							
+						<div class='d-md-none' >							
 							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text'>
@@ -326,7 +327,7 @@
 							</div>
 							<div style="clear:both"></div>
 						</div>
-						<div class='hidden-sm-down' >	 						
+						<div class='d-none d-md-block' >	 						
 							<div class ='step-outer step-claimorganization-outer applestoresafe' onclick='openSignupPage();'>
 								<span class='step-inner-wrapper' >
 									<span class='step-text' style='height:55px; line-height:55px;'>
