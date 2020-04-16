@@ -8,10 +8,12 @@ The purpose of this plugin is to allow for swiping credit cards using the IDTech
 - __Android__ (SDK >= 2)
 
 ### Installation
-Currently, this plugin can only be installed via the Command-Line Interface.
 ```
-cordova plugin add https://github.com/elizabethrego/cordova-plugin-unimag-swiper/
+cordova plugin add com.wodify.cordova.plugin.unimag-swiper
 ```
+## Fork Usage
+Changes include an update to allow for Microphone usage on iOS10+
+
 ## Usage
 The IDTech reader can be used after it is activated, which you may do anytime after the Cordova "deviceready" event is fired, by calling the__activate__ method on your plugin object. By default, this will be cordova.plugins.unimag.swiper. Here, "activated" means that the plugin will be able to listen to IDTech SDK events. The IDTech SDK (hereby referred to simply as SDK) sends a wide variety of events related to reader tasks such as connection and swipe. In response to some of these events, the plugin will fire its own events that you can capture in your application.
 

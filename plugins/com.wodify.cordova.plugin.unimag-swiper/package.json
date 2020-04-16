@@ -1,0 +1,67 @@
+{
+  "_from": "com.wodify.cordova.plugin.unimag-swiper",
+  "_id": "com.wodify.cordova.plugin.unimag-swiper@0.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-6Q6OW2VEzd6weaSkEPrmECz/MBFiny/F2JFLroaTLTWFyPeUvOz+BOJMvNtooi1vLfz1LfB0KprduOOHj2vDZQ==",
+  "_location": "/com.wodify.cordova.plugin.unimag-swiper",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "com.wodify.cordova.plugin.unimag-swiper",
+    "name": "com.wodify.cordova.plugin.unimag-swiper",
+    "escapedName": "com.wodify.cordova.plugin.unimag-swiper",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/com.wodify.cordova.plugin.unimag-swiper/-/com.wodify.cordova.plugin.unimag-swiper-0.0.4.tgz",
+  "_shasum": "49c915211d07f7de1c20a2df469b12b78c2ad8a9",
+  "_spec": "com.wodify.cordova.plugin.unimag-swiper",
+  "_where": "C:\\Users\\imman\\Documents\\ctg2\\offeringkiosk2.0",
+  "author": {
+    "name": "23limes"
+  },
+  "bugs": {
+    "url": "https://github.com/PayJunction/cordova-plugin-unimag-swiper/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.wodify.cordova.plugin.unimag-swiper",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for IDTech Unimag II, Unimag Pro, and Shuttle mobile credit card swipers.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "homepage": "https://github.com/PayJunction/cordova-plugin-unimag-swiper#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "wodify",
+    "idtech",
+    "unimag",
+    "swiper",
+    "card reader",
+    "credit card"
+  ],
+  "license": "Apache 2.0 License",
+  "name": "com.wodify.cordova.plugin.unimag-swiper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PayJunction/cordova-plugin-unimag-swiper.git"
+  },
+  "version": "0.0.4"
+}
