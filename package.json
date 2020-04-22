@@ -27,11 +27,13 @@
             "com.wodify.cordova.plugin.unimag-swiper": {}
         },
         "platforms": [
-            "ios"
+            "ios",
+            "android"
         ]
     },
     "dependencies": {
         "com.wodify.cordova.plugin.unimag-swiper": "0.0.4",
+        "cordova-android": "^8.1.0",
         "cordova-ios": "^5.1.1",
         "cordova-plugin-disable-bitcode": "1.3.2"
     }
