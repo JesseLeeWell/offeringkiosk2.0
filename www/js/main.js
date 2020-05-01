@@ -1084,18 +1084,22 @@ function activateCardReader()
 
     if(true || isApple() && getAppleSafe() )
     {
+        // cordova.plugins.unimag.swiper.setReaderType('shuttle');
+        // alert(" before shuttle connected");
 
 
         cordova.plugins.unimag.swiper.activate(function(){
           alert("card reader activated");
           console.log("card reader activated");
         }, function(e){
-          alert(e);
+          alert("error activating" + e);
           console.error(e);
         });
 
-        //cordova.plugins.unimag.swiper.setReaderType('shuttle');
-        //alert(" before shuttle connected");
+        cordova.plugins.unimag.swiper.enableLogs(); 
+        alert("enable logs");
+        cordova.plugins.unimag.swiper.setReaderType('shuttle'); 
+        alert(" before shuttle connected");
 
         var swipe = function () {
 
@@ -1117,6 +1121,11 @@ function activateCardReader()
             }
         }
 
+        // debugging start
+        cordova.plugins.unimag.swiper.on('connecting', function () { alert('connecting') })
+        cordova.plugins.unimag.swiper.on('xml_error', function () { alert('xml_error') })
+        cordova.plugins.unimag.swiper.on('autoconfig_error', function () { alert('autoconfig_error') })
+        // debuggin end
         cordova.plugins.unimag.swiper.on('connected', function () {
           console.log("connected");
           alert("connected");
