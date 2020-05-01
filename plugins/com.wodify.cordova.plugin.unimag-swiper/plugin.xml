@@ -3,19 +3,19 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.wodify.cordova.plugin.unimag-swiper"
-    version="0.0.4">
+    version="0.0.2">
 
     <name>Cordova-Plugin-UniMag-Swiper</name>
 
     <description>Cordova plugin for IDTech Unimag II, Unimag Pro, and Shuttle mobile credit card swipers.</description>
 
-    <repo>https://github.com/payjunction/cordova-plugin-unimag-swiper.git</repo>
+    <repo>https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git</repo>
 
     <keyword>wodify, idtech, unimag, swiper, card reader, credit card</keyword>
 
     <license>Apache 2.0 License</license>
 
-    <author>Elizabeth Rego, 23limes</author>
+    <author>Elizabeth Rego</author>
 
     <!-- cordova -->
     <engines>
@@ -59,11 +59,6 @@
             <feature name="UnimagSwiper">
                 <param name="ios-package" value="UnimagSwiper" />
             </feature>
-        </config-file>
-
-        <!-- Declare Microphone Usage for iOS10+ -->
-        <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
-            <string>For Credit Card Swiping</string>
         </config-file>
 
 		<source-file src="src/ios/IDTECH_UniMag.a" framework="true" />

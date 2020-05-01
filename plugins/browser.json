@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "com.wodify.cordova.plugin.unimag-swiper": {
-      "PACKAGE_NAME": "com.continuetogive.kiosk"
-    },
     "cordova-plugin-battery-status": {
       "PACKAGE_NAME": "com.continuetogive.kiosk"
     },
@@ -71,6 +68,9 @@
       "PACKAGE_NAME": "com.continuetogive.kiosk"
     },
     "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.continuetogive.kiosk"
+    },
+    "com.wodify.cordova.plugin.unimag-swiper": {
       "PACKAGE_NAME": "com.continuetogive.kiosk"
     }
   },

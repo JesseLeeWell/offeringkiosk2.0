@@ -1,40 +1,36 @@
 {
-  "_from": "com.wodify.cordova.plugin.unimag-swiper",
-  "_id": "com.wodify.cordova.plugin.unimag-swiper@0.0.4",
+  "_from": "git+https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git",
+  "_id": "com.wodify.cordova.plugin.unimag-swiper@0.0.2",
   "_inBundle": false,
-  "_integrity": "sha512-6Q6OW2VEzd6weaSkEPrmECz/MBFiny/F2JFLroaTLTWFyPeUvOz+BOJMvNtooi1vLfz1LfB0KprduOOHj2vDZQ==",
+  "_integrity": "",
   "_location": "/com.wodify.cordova.plugin.unimag-swiper",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "com.wodify.cordova.plugin.unimag-swiper",
-    "name": "com.wodify.cordova.plugin.unimag-swiper",
-    "escapedName": "com.wodify.cordova.plugin.unimag-swiper",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "type": "git",
+    "raw": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper/",
+    "rawSpec": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper/",
+    "saveSpec": "git+https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git",
+    "fetchSpec": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/com.wodify.cordova.plugin.unimag-swiper/-/com.wodify.cordova.plugin.unimag-swiper-0.0.4.tgz",
-  "_shasum": "49c915211d07f7de1c20a2df469b12b78c2ad8a9",
-  "_spec": "com.wodify.cordova.plugin.unimag-swiper",
+  "_resolved": "git+https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git#69c1818930faabc0849a2cddcac327faa30c9760",
+  "_shasum": "abe55e103ead0663f8c3aef670afb01901028850",
+  "_spec": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper/",
   "_where": "C:\\Users\\imman\\Documents\\ctg2\\offeringkiosk2.0",
-  "author": {
-    "name": "23limes"
-  },
+  "author": "",
   "bugs": {
-    "url": "https://github.com/PayJunction/cordova-plugin-unimag-swiper/issues"
+    "url": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper/issues"
   },
   "bundleDependencies": false,
   "cordova": {
     "id": "com.wodify.cordova.plugin.unimag-swiper",
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "deprecated": false,
@@ -45,11 +41,9 @@
       "version": ">=3.5.0"
     }
   ],
-  "homepage": "https://github.com/PayJunction/cordova-plugin-unimag-swiper#readme",
+  "gitHead": "2c094360f018e8697cac5054bf16dad3ce93bf0b",
+  "homepage": "https://github.com/elizabethrego/cordova-plugin-unimag-swiper#readme",
   "keywords": [
-    "ecosystem:cordova",
-    "cordova-android",
-    "cordova-ios",
     "wodify",
     "idtech",
     "unimag",
@@ -57,11 +51,11 @@
     "card reader",
     "credit card"
   ],
-  "license": "Apache 2.0 License",
+  "license": "MIT License, see LICENSE.md for details",
   "name": "com.wodify.cordova.plugin.unimag-swiper",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PayJunction/cordova-plugin-unimag-swiper.git"
+    "url": "git+https://github.com/elizabethrego/cordova-plugin-unimag-swiper.git"
   },
-  "version": "0.0.4"
+  "version": "0.0.2"
 }
