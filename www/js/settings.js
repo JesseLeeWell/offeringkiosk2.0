@@ -5,12 +5,9 @@
 var environment = 'prod';
 //var environment = 'local';
 //var environment = 'demo';
-
+//on xcode we need to go to workspace settings and in "build system" settings change to legacy build system
 var _kioskversion = '3.5';
 var _kiosklicense = 'store';
-
-//var _kiosklicense = 'enterprise';
-//var _kioskversion = 3.0;
 
 //setup the whitelabel we are compilig for
 var _whitelabel = 'continuetogive';
@@ -94,11 +91,10 @@ var _searchPage = 'index.php?moduleType=Module_Search&task=show.results';
 var _signUpPage = 'index.php?moduleType=Module_Registration&task=regflow_church&registrationstep=regcreateaccount';
 var _getPageInformationURL = 'router/Kiosk/getpageinformation?pageid=';
 var _appCheckURL = 'appcheck.php';
-var _iosEnterpriseVersionAppCheckURL = _baseURL+'iosenterpriseversionappcheck.php';
+
 var _purchasePageURL = 'https://continue-to-give-kiosk-center.myshopify.com/collections/all';
 var _lockKioskHelpURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_ios_kiosk_mode';
 var _KioskIntroURL = 'index.php?moduleType=Module_Content&task=text&article=kiosk_kiosk_intro';
-var _enterpriseDownloadURL = 'itms-services://?action=download-manifest&url='+_baseURL+_whitelabel+'_offering_kiosk.plist';
 
 var browserwindow = null;
 var browserwindow = null;

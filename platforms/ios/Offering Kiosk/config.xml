@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.continuetogive.kiosk" version="3.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.company.kiosk" version="3.5.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="HandleOpenUrl">
         <param name="ios-package" value="CDVHandleOpenURL" />
@@ -21,74 +25,30 @@
     <feature name="UnimagSwiper">
         <param name="ios-package" value="UnimagSwiper" />
     </feature>
-    <feature name="Battery">
-        <param name="ios-package" value="CDVBattery" />
-    </feature>
-    <feature name="Camera">
-        <param name="ios-package" value="CDVCamera" />
-    </feature>
-    <feature name="Console">
-        <param name="ios-package" value="CDVLogger" />
-    </feature>
-    <feature name="Contacts">
-        <param name="ios-package" value="CDVContacts" />
-    </feature>
-    <feature name="Accelerometer">
-        <param name="ios-package" value="CDVAccelerometer" />
-    </feature>
-    <feature name="Compass">
-        <param name="ios-package" value="CDVCompass" />
-    </feature>
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
     </feature>
-    <feature name="File">
-        <param name="ios-package" value="CDVFile" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="FileTransfer">
-        <param name="ios-package" value="CDVFileTransfer" />
-    </feature>
-    <feature name="Geolocation">
-        <param name="ios-package" value="CDVLocation" />
-    </feature>
-    <feature name="Globalization">
-        <param name="ios-package" value="CDVGlobalization" />
-    </feature>
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
-    </feature>
-    <feature name="Media">
-        <param name="ios-package" value="CDVSound" />
-    </feature>
-    <feature name="Capture">
-        <param name="ios-package" value="CDVCapture" />
-    </feature>
-    <feature name="NetworkStatus">
-        <param name="ios-package" value="CDVConnection" />
-    </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" />
+    <feature name="UIInAppBrowser">
+        <param name="ios-package" value="CDVUIInAppBrowser" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Vibration">
-        <param name="ios-package" value="CDVVibration" />
+    <feature name="WKInAppBrowser">
+        <param name="ios-package" value="CDVWKInAppBrowser" />
+        <param name="onload" value="true" />
     </feature>
     <name>Offering Kiosk</name>
     <description>
         Accept donations anywhere with Continue To Give's Offering Kiosk
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
+    <author email="continuetogive@continuetogive.com" href="https://continuetogive.com">
         Continue To Give Team
     </author>
     <content src="index.html" />
     <icon src="www/icon.png" />
-    <allow-navigation href="*" />
-    <allow-intent href="*" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -137,9 +97,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <preference name="CameraUsesGeolocation" value="false" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="android-minSdkVersion" value="26" />
     <preference name="permissions" value="none" />
     <preference name="KeepRunning" value="true" />
