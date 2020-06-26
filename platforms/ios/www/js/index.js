@@ -17,6 +17,7 @@
  * under the License.
  */
 var connected = false;//global var
+var browserwindow = null;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -292,12 +293,34 @@ function iabLoadStartDonation(event) {
     //alert("iabLoadStartDonation");
     if(cururl.indexOf("kiosksettings") != -1)
     {
-
-
         browserwindow.close();		
-
-
     }
+
+    var is_apple_safe = getAppleSafe();
+    if(!is_apple_safe)
+    {
+        cururl = event.url;
+        if(cururl.indexOf("donation_prompt") != -1 )
+        {
+            browserwindow.close();
+            openPage(cururl, "_system", "",false);
+        }
+    }
+}
+
+function openPage(url, target, location, includebaseurl, callback, lasturl)
+{
+    if(includebaseurl)
+    {
+        url = _baseURL+url;  
+    }
+     if(callback)
+    {
+        
+        callback(lasturl);  
+          
+    } 
+    window.open(url, target, location);
 }
 
 function iabLoadStop(event) {
@@ -377,10 +400,15 @@ function openDonationPage(extras)
         storageSet('lastopendonationpageextras', extras);
         var pageid = getPageID();
         var url =_kioskURL + pageid + extras;
+        var target = "_blank";
+        browserwindow = cordova.InAppBrowser.open(url, target, 'toolbar=no,location=no');
+        browserwindow.addEventListener('exit', iabCloseDonation);
+        browserwindow.addEventListener('loadstop', iabLoadStopDonation);
+        browserwindow.addEventListener('loadstart', iabLoadStartDonation);
 
         //determin if this page should be open in app or not
         //for store ios open in blank
-
+        /*
         var is_apple_safe = getAppleSafe();
         if(is_apple_safe)
         {
@@ -395,18 +423,12 @@ function openDonationPage(extras)
 
             browserwindow = window.open(url, '_system', 'toolbar=no,location=no');
         }
-
-
-
+        */
     }
     else
     {
         showMessage("Please set the kiosk to your church, organization, or fundraiser in step 2 below. ", '', " ", "OK");
-
-
     }
-
-
 }
 function storageSet(key, value)
 {

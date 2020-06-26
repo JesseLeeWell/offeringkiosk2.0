@@ -33,8 +33,6 @@
 	<string></string>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>The headphone jack is used to enable the credit card reader</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

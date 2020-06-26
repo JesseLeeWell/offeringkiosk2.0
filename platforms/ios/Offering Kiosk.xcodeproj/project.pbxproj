@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		1A3AA0D854B3485B8E8F12C1 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 674EF70A1F4440718A09A8B0 /* CDVNotification.m */; };
+		08389D2524D54813AE423864 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 738B96EAA0AE46A78020AEB2 /* CDVInAppBrowser.m */; };
+		0840129777194014830FBC52 /* UnimagSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = E9260D58622A472DAC139CFC /* UnimagSwiper.m */; };
+		12F713390737446289134553 /* CDVWKInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2721A96B61C24C73B86DB62C /* CDVWKInAppBrowser.m */; };
+		1B914B6026324F6B9C57144A /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F0CA820BA48BDAE1663E1 /* CDVNotification.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1E248496E3DD4B2F955CECDD /* CDVWKInAppBrowserUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F8D0A56A284494AF56E0DF /* CDVWKInAppBrowserUIDelegate.m */; };
-		2C90C5E4B8CD4548BE95D4AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B1EC928E44646B49CC6F8 /* AudioToolbox.framework */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		303B3D67D98E4F1C90F25DA0 /* CDVUIInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EACA57518C4883ACEB532E /* CDVUIInAppBrowser.m */; };
-		50558BC93A2243F99131ABB2 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 584526B9F883402096B7552A /* CDVInAppBrowser.m */; };
-		613764472C9C4A45BAC54E8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E220DF6FE81E4809B5A91FF1 /* AVFoundation.framework */; };
+		3CCBC1E7E3314D2CB43AB002 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372AB42D8914181B2FC605F /* MediaPlayer.framework */; };
+		5BD7F6E7C9574233946345D0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831E1862DD634DB0AB5C7734 /* AudioToolbox.framework */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		ABA493522E614841BC375A0D /* CDVWKInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9BCEEEDFF44767A1575F3E /* CDVWKInAppBrowser.m */; };
-		ACD9B3D31B05475C81B7A12B /* CDVInAppBrowserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6935F3ECED84575BAF69B63 /* CDVInAppBrowserNavigationController.m */; };
-		B26250B08A6746E5B5EDEBF9 /* CDVInAppBrowserOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A426AEE3F14675BE0099EE /* CDVInAppBrowserOptions.m */; };
-		B276074DCF76453494C600FB /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8B1FEE0C5147DF89A4C2D7 /* CDVDevice.m */; };
-		B790703F40D24F83A89F198C /* IDTECH_UniMag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F67F193D59E241A9AD1A662A /* IDTECH_UniMag.a */; };
-		DB8B2A432CA64865B75FA311 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BA074F165F4E7F83299EE8 /* MediaPlayer.framework */; };
-		E296F5589C444BCE84E41F85 /* UnimagSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A62EEA554B55AEB28187 /* UnimagSwiper.m */; };
-		F99A8618756E4D019ADA3BB0 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9A8C13BF2964264B64BB1A3 /* CDVNotification.bundle */; };
+		6CEAD591CA5A4B39AE6F39C9 /* CDVUIInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE58BB6E7F64083AE6CE591 /* CDVUIInAppBrowser.m */; };
+		73C3F4A73D9648459A7E350F /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65FC56B32CC2472E936530A3 /* CDVNotification.bundle */; };
+		8B53C466F6C949B486DC0BE5 /* CDVInAppBrowserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6388B574822A46DA8BAC9B6C /* CDVInAppBrowserNavigationController.m */; };
+		8F01D259ECD94B8883AAC530 /* IDTECH_UniMag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D238FC19BA848459F4AF323 /* IDTECH_UniMag.a */; };
+		A6DBDEA4B9B34C84A213FD05 /* CDVInAppBrowserOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = FACCF982791A40D5AC57AEC2 /* CDVInAppBrowserOptions.m */; };
+		B1B827E137A3498E9C0AA0DA /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9664635881F840ACB132ED23 /* CDVDevice.m */; };
+		CA453FF9558C4682A280CF83 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3A9BC197A5455F9CC46561 /* AVFoundation.framework */; };
+		F8F42CE018264EFFA184F2DF /* CDVWKInAppBrowserUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 080E0B819DD247408DA13D0C /* CDVWKInAppBrowserUIDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +56,14 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Offering Kiosk/Images.xcassets"; sourceTree = SOURCE_ROOT; };
-		06177C88362F49519A55EAF7 /* CDVWKInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.h"; sourceTree = "<group>"; };
-		1301A62EEA554B55AEB28187 /* UnimagSwiper.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UnimagSwiper.m; path = "com.wodify.cordova.plugin.unimag-swiper/UnimagSwiper.m"; sourceTree = "<group>"; };
+		03A61074CBF248AA84ADB061 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; };
+		03DF1E960EFB4938BFC33768 /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		080E0B819DD247408DA13D0C /* CDVWKInAppBrowserUIDelegate.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKInAppBrowserUIDelegate.m; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.m"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Offering Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Offering Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2721A96B61C24C73B86DB62C /* CDVWKInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.m"; sourceTree = "<group>"; };
+		2793B526892F4B86B1508C1F /* UnimagSwiper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UnimagSwiper.h; path = "com.wodify.cordova.plugin.unimag-swiper/UnimagSwiper.h"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
@@ -71,34 +74,31 @@
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* Offering Kiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offering Kiosk-Prefix.pch"; sourceTree = "<group>"; };
-		3B9BCEEEDFF44767A1575F3E /* CDVWKInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.m"; sourceTree = "<group>"; };
-		49A426AEE3F14675BE0099EE /* CDVInAppBrowserOptions.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowserOptions.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.m"; sourceTree = "<group>"; };
-		4F98D24DB5B54C18AE303FF1 /* UnimagSwiper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UnimagSwiper.h; path = "com.wodify.cordova.plugin.unimag-swiper/UnimagSwiper.h"; sourceTree = "<group>"; };
-		57EACA57518C4883ACEB532E /* CDVUIInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVUIInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVUIInAppBrowser.m"; sourceTree = "<group>"; };
-		584526B9F883402096B7552A /* CDVInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; };
-		5AAC4A311B3E4A05ADB35FAA /* CDVInAppBrowserNavigationController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowserNavigationController.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.h"; sourceTree = "<group>"; };
-		674EF70A1F4440718A09A8B0 /* CDVNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; };
-		69CB158263D64779BC4DA966 /* CDVUIInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVUIInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVUIInAppBrowser.h"; sourceTree = "<group>"; };
+		4651CE2D958C4FA586086031 /* CDVUIInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVUIInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVUIInAppBrowser.h"; sourceTree = "<group>"; };
+		4BE58BB6E7F64083AE6CE591 /* CDVUIInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVUIInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVUIInAppBrowser.m"; sourceTree = "<group>"; };
+		55735A2A1AB841128230C50D /* CDVInAppBrowserNavigationController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowserNavigationController.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.h"; sourceTree = "<group>"; };
+		61C029D5826E4936A27699E2 /* CDVWKInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowser.h"; sourceTree = "<group>"; };
+		6388B574822A46DA8BAC9B6C /* CDVInAppBrowserNavigationController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowserNavigationController.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.m"; sourceTree = "<group>"; };
+		65FC56B32CC2472E936530A3 /* CDVNotification.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = "Offering Kiosk/CDVLaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
-		6D8F4EB4E3004481ABFD5D37 /* CDVWKInAppBrowserUIDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKInAppBrowserUIDelegate.h; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.h"; sourceTree = "<group>"; };
-		727F04B8820F42068CD5A5F1 /* CDVInAppBrowserOptions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowserOptions.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.h"; sourceTree = "<group>"; };
-		825B1EC928E44646B49CC6F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		8A47B620A6A5471D83FC428C /* CDVInAppBrowser.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; };
+		70776508B9BC4EB4981B219B /* CDVInAppBrowserOptions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowserOptions.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.h"; sourceTree = "<group>"; };
+		738B96EAA0AE46A78020AEB2 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; };
+		7D238FC19BA848459F4AF323 /* IDTECH_UniMag.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = IDTECH_UniMag.a; path = "Offering Kiosk/Plugins/com.wodify.cordova.plugin.unimag-swiper/IDTECH_UniMag.a"; sourceTree = "<group>"; };
+		831E1862DD634DB0AB5C7734 /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8372AB42D8914181B2FC605F /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Offering Kiosk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Offering Kiosk-Info.plist"; path = "Offering Kiosk/Offering Kiosk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		95E7F9BEED8845BBAEDD6C2B /* CDVNotification.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
-		A1F8D0A56A284494AF56E0DF /* CDVWKInAppBrowserUIDelegate.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKInAppBrowserUIDelegate.m; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.m"; sourceTree = "<group>"; };
-		AB8B1FEE0C5147DF89A4C2D7 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
-		D6935F3ECED84575BAF69B63 /* CDVInAppBrowserNavigationController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowserNavigationController.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowserNavigationController.m"; sourceTree = "<group>"; };
-		DCDE6F9CD75A42DFB0966B56 /* uniMag.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = uniMag.h; path = "com.wodify.cordova.plugin.unimag-swiper/uniMag.h"; sourceTree = "<group>"; };
-		E220DF6FE81E4809B5A91FF1 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E807C062CE3849BDB276BB1D /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
-		E9A8C13BF2964264B64BB1A3 /* CDVNotification.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
+		9664635881F840ACB132ED23 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
+		9C3A9BC197A5455F9CC46561 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B8A58E3F574B40489305E34F /* CDVWKInAppBrowserUIDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKInAppBrowserUIDelegate.h; path = "cordova-plugin-inappbrowser/CDVWKInAppBrowserUIDelegate.h"; sourceTree = "<group>"; };
+		CFB592FDB2E74CAAA6758D60 /* CDVNotification.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
+		D1771612720E481F832BB6F4 /* uniMag.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = uniMag.h; path = "com.wodify.cordova.plugin.unimag-swiper/uniMag.h"; sourceTree = "<group>"; };
+		E9260D58622A472DAC139CFC /* UnimagSwiper.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UnimagSwiper.m; path = "com.wodify.cordova.plugin.unimag-swiper/UnimagSwiper.m"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		F67F193D59E241A9AD1A662A /* IDTECH_UniMag.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = IDTECH_UniMag.a; path = "Offering Kiosk/Plugins/com.wodify.cordova.plugin.unimag-swiper/IDTECH_UniMag.a"; sourceTree = "<group>"; };
-		F7BA074F165F4E7F83299EE8 /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F13F0CA820BA48BDAE1663E1 /* CDVNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Offering Kiosk/config.xml"; sourceTree = "<group>"; };
+		FACCF982791A40D5AC57AEC2 /* CDVInAppBrowserOptions.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowserOptions.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowserOptions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +107,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				B790703F40D24F83A89F198C /* IDTECH_UniMag.a in Frameworks */,
-				613764472C9C4A45BAC54E8D /* AVFoundation.framework in Frameworks */,
-				2C90C5E4B8CD4548BE95D4AB /* AudioToolbox.framework in Frameworks */,
-				DB8B2A432CA64865B75FA311 /* MediaPlayer.framework in Frameworks */,
+				8F01D259ECD94B8883AAC530 /* IDTECH_UniMag.a in Frameworks */,
+				CA453FF9558C4682A280CF83 /* AVFoundation.framework in Frameworks */,
+				5BD7F6E7C9574233946345D0 /* AudioToolbox.framework in Frameworks */,
+				3CCBC1E7E3314D2CB43AB002 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* Offering Kiosk-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
-				E9A8C13BF2964264B64BB1A3 /* CDVNotification.bundle */,
+				65FC56B32CC2472E936530A3 /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "Offering Kiosk/Resources";
@@ -182,10 +182,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F67F193D59E241A9AD1A662A /* IDTECH_UniMag.a */,
-				E220DF6FE81E4809B5A91FF1 /* AVFoundation.framework */,
-				825B1EC928E44646B49CC6F8 /* AudioToolbox.framework */,
-				F7BA074F165F4E7F83299EE8 /* MediaPlayer.framework */,
+				7D238FC19BA848459F4AF323 /* IDTECH_UniMag.a */,
+				9C3A9BC197A5455F9CC46561 /* AVFoundation.framework */,
+				831E1862DD634DB0AB5C7734 /* AudioToolbox.framework */,
+				8372AB42D8914181B2FC605F /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,25 +212,25 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				AB8B1FEE0C5147DF89A4C2D7 /* CDVDevice.m */,
-				E807C062CE3849BDB276BB1D /* CDVDevice.h */,
-				1301A62EEA554B55AEB28187 /* UnimagSwiper.m */,
-				DCDE6F9CD75A42DFB0966B56 /* uniMag.h */,
-				4F98D24DB5B54C18AE303FF1 /* UnimagSwiper.h */,
-				674EF70A1F4440718A09A8B0 /* CDVNotification.m */,
-				95E7F9BEED8845BBAEDD6C2B /* CDVNotification.h */,
-				584526B9F883402096B7552A /* CDVInAppBrowser.m */,
-				49A426AEE3F14675BE0099EE /* CDVInAppBrowserOptions.m */,
-				D6935F3ECED84575BAF69B63 /* CDVInAppBrowserNavigationController.m */,
-				57EACA57518C4883ACEB532E /* CDVUIInAppBrowser.m */,
-				3B9BCEEEDFF44767A1575F3E /* CDVWKInAppBrowser.m */,
-				A1F8D0A56A284494AF56E0DF /* CDVWKInAppBrowserUIDelegate.m */,
-				8A47B620A6A5471D83FC428C /* CDVInAppBrowser.h */,
-				727F04B8820F42068CD5A5F1 /* CDVInAppBrowserOptions.h */,
-				5AAC4A311B3E4A05ADB35FAA /* CDVInAppBrowserNavigationController.h */,
-				69CB158263D64779BC4DA966 /* CDVUIInAppBrowser.h */,
-				06177C88362F49519A55EAF7 /* CDVWKInAppBrowser.h */,
-				6D8F4EB4E3004481ABFD5D37 /* CDVWKInAppBrowserUIDelegate.h */,
+				9664635881F840ACB132ED23 /* CDVDevice.m */,
+				03DF1E960EFB4938BFC33768 /* CDVDevice.h */,
+				E9260D58622A472DAC139CFC /* UnimagSwiper.m */,
+				D1771612720E481F832BB6F4 /* uniMag.h */,
+				2793B526892F4B86B1508C1F /* UnimagSwiper.h */,
+				F13F0CA820BA48BDAE1663E1 /* CDVNotification.m */,
+				CFB592FDB2E74CAAA6758D60 /* CDVNotification.h */,
+				738B96EAA0AE46A78020AEB2 /* CDVInAppBrowser.m */,
+				FACCF982791A40D5AC57AEC2 /* CDVInAppBrowserOptions.m */,
+				6388B574822A46DA8BAC9B6C /* CDVInAppBrowserNavigationController.m */,
+				4BE58BB6E7F64083AE6CE591 /* CDVUIInAppBrowser.m */,
+				2721A96B61C24C73B86DB62C /* CDVWKInAppBrowser.m */,
+				080E0B819DD247408DA13D0C /* CDVWKInAppBrowserUIDelegate.m */,
+				03A61074CBF248AA84ADB061 /* CDVInAppBrowser.h */,
+				70776508B9BC4EB4981B219B /* CDVInAppBrowserOptions.h */,
+				55735A2A1AB841128230C50D /* CDVInAppBrowserNavigationController.h */,
+				4651CE2D958C4FA586086031 /* CDVUIInAppBrowser.h */,
+				61C029D5826E4936A27699E2 /* CDVWKInAppBrowser.h */,
+				B8A58E3F574B40489305E34F /* CDVWKInAppBrowserUIDelegate.h */,
 			);
 			name = Plugins;
 			path = "Offering Kiosk/Plugins";
@@ -277,6 +277,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 86DCZ8S5Q6;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -329,7 +330,7 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
-				F99A8618756E4D019ADA3BB0 /* CDVNotification.bundle in Resources */,
+				73C3F4A73D9648459A7E350F /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,15 +362,15 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				B276074DCF76453494C600FB /* CDVDevice.m in Sources */,
-				E296F5589C444BCE84E41F85 /* UnimagSwiper.m in Sources */,
-				1A3AA0D854B3485B8E8F12C1 /* CDVNotification.m in Sources */,
-				50558BC93A2243F99131ABB2 /* CDVInAppBrowser.m in Sources */,
-				B26250B08A6746E5B5EDEBF9 /* CDVInAppBrowserOptions.m in Sources */,
-				ACD9B3D31B05475C81B7A12B /* CDVInAppBrowserNavigationController.m in Sources */,
-				303B3D67D98E4F1C90F25DA0 /* CDVUIInAppBrowser.m in Sources */,
-				ABA493522E614841BC375A0D /* CDVWKInAppBrowser.m in Sources */,
-				1E248496E3DD4B2F955CECDD /* CDVWKInAppBrowserUIDelegate.m in Sources */,
+				B1B827E137A3498E9C0AA0DA /* CDVDevice.m in Sources */,
+				0840129777194014830FBC52 /* UnimagSwiper.m in Sources */,
+				1B914B6026324F6B9C57144A /* CDVNotification.m in Sources */,
+				08389D2524D54813AE423864 /* CDVInAppBrowser.m in Sources */,
+				A6DBDEA4B9B34C84A213FD05 /* CDVInAppBrowserOptions.m in Sources */,
+				8B53C466F6C949B486DC0BE5 /* CDVInAppBrowserNavigationController.m in Sources */,
+				6CEAD591CA5A4B39AE6F39C9 /* CDVUIInAppBrowser.m in Sources */,
+				12F713390737446289134553 /* CDVWKInAppBrowser.m in Sources */,
+				F8F42CE018264EFFA184F2DF /* CDVWKInAppBrowserUIDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +394,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.5.2;
+				CURRENT_PROJECT_VERSION = 3.6.35;
 				DEVELOPMENT_TEAM = 86DCZ8S5Q6;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -409,9 +412,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/com.wodify.cordova.plugin.unimag-swiper\"",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.continuetogive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -428,7 +432,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 3.5.2;
+				CURRENT_PROJECT_VERSION = 3.6.35;
 				DEVELOPMENT_TEAM = 86DCZ8S5Q6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Offering Kiosk/Offering Kiosk-Prefix.pch";
@@ -441,7 +445,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/com.wodify.cordova.plugin.unimag-swiper\"",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.continuetogive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -6,7 +6,7 @@ var environment = 'prod';
 //var environment = 'local';
 //var environment = 'demo';
 //on xcode we need to go to workspace settings and in "build system" settings change to legacy build system
-var _kioskversion = '3.5';
+var _kioskversion = '3.6';
 var _kiosklicense = 'store';
 
 //setup the whitelabel we are compilig for

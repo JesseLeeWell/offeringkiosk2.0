@@ -1,157 +1,157 @@
 {
   "images" : [
     {
-      "filename" : "icon-20@2x.png",
+      "filename" : "CTG 740x40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "icon-20@3x.png",
+      "filename" : "CTG 7 60x60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "icon-29.png",
+      "filename" : "CTG 7 29x29.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-29@2x.png",
+      "filename" : "CTG 7 58x58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-29@3x.png",
+      "filename" : "CTG 7 87x87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-40@2x.png",
+      "filename" : "CTG 7 80x80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "icon-60@2x.png",
+      "filename" : "CTG 7 120x120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "icon.png",
+      "filename" : "CTG 7 57x57.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "57x57"
     },
     {
-      "filename" : "icon@2x.png",
+      "filename" : "CTG 7 114x114.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "57x57"
     },
     {
-      "filename" : "icon-60@2x.png",
+      "filename" : "CTG 7 120x120-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "icon-60@3x.png",
+      "filename" : "CTG 7 180x180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "icon-20.png",
+      "filename" : "CTG 7 20x20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "icon-20@2x.png",
+      "filename" : "CTG 740x40-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "icon-29.png",
+      "filename" : "CTG 7 29x29-1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-29@2x.png",
+      "filename" : "CTG 7 58x58-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-40.png",
+      "filename" : "CTG 740x40-2.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "icon-40@2x.png",
+      "filename" : "CTG 7 80x80-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "icon-50.png",
+      "filename" : "CTG 7 50x50.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "50x50"
     },
     {
-      "filename" : "icon-50@2x.png",
+      "filename" : "CTG 7 100x100.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "50x50"
     },
     {
-      "filename" : "icon-72.png",
+      "filename" : "CTG 7 72x72.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "72x72"
     },
     {
-      "filename" : "icon-72@2x.png",
+      "filename" : "CTG 7 144x144.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "72x72"
     },
     {
-      "filename" : "icon-76.png",
+      "filename" : "CTG 7 76x76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "icon-76@2x.png",
+      "filename" : "CTG 7 152x152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "icon-83.5@2x.png",
+      "filename" : "CTG 7 167x167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "icon-1024-5.png",
+      "filename" : "CTG 7 1024-app-store.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
     },
     {
-      "filename" : "icon-76@2x-2.png",
+      "filename" : "CTG 7 48x48.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -159,7 +159,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "icon-76@2x-1.png",
+      "filename" : "CTG 7 55x55.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -167,21 +167,21 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "icon-29@2x.png",
+      "filename" : "CTG 7 58x58-2.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-29@3x.png",
+      "filename" : "CTG 7 87x87-1.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "icon-40@2x.png",
+      "filename" : "CTG 7 80x80-2.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -189,7 +189,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "icon-44@2x.png",
+      "filename" : "CTG 7 88x88.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -197,7 +197,7 @@
       "subtype" : "40mm"
     },
     {
-      "filename" : "icon-50@2x.png",
+      "filename" : "CTG 7 100x100-1.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -205,7 +205,7 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "icon-86@2x.png",
+      "filename" : "CTG 7 172x172.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -213,7 +213,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "icon-1024-4.png",
+      "filename" : "CTG 7 196x196.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -221,7 +221,7 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "icon-1024-3.png",
+      "filename" : "CTG 7 216x216.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -229,7 +229,7 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "icon-1024-2.png",
+      "filename" : "CTG 7 1024-app-store-1.png",
       "idiom" : "watch-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
